@@ -14,9 +14,16 @@ const theme = extendTheme({
   },
   styles: {
     global: {
-      body: { bg: "bg", color: "black" },
-      "h1, h2,h3": { textTransform: "uppercase" },
-      ul: { listStyleType: "none" },
+      body: {
+        bg: "bg",
+        color: "black",
+      },
+      "h1, h2,h3": {
+        textTransform: "uppercase",
+      },
+      ul: {
+        listStyleType: "none",
+      },
       "a:focus, button:focus": {
         outline: "2px dashed red",
         outlineOffset: "4px",
