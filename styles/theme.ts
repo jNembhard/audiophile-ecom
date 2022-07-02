@@ -9,6 +9,7 @@ const theme = extendTheme({
     rawSienna: "#D87D4A",
     seashell: "#F1F1F1",
     white: "#FFFFFF",
+    divider: "rgba(255,255,255,0.1)",
     borderInput: "#CFCFCF",
     borderError: "#CD2C2C",
   },

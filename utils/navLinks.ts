@@ -2,7 +2,7 @@ import headphones from "../public/assets/desktop/image-category-thumbnail-headph
 import speakers from "../public/assets/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../public/assets/desktop/image-category-thumbnail-earphones.png";
 
-export const navLinks = [
+export const navlinks = [
   { id: 1, text: "Home", url: "/" },
   {
     id: 2,
