@@ -5,14 +5,17 @@ import Header from "../components/organisms/Header";
 import Footer from "../components/organisms/Footer";
 import { Provider } from "react-redux";
 import store from "../store/index";
+import CartContextProvider from "../store/CartContextProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme} resetCSS>
       <Provider store={store}>
+        {/* <CartContextProvider> */}
         <Header />
         <Component {...pageProps} />
         <Footer />
+        {/* </CartContextProvider> */}
       </Provider>
     </ChakraProvider>
   );
