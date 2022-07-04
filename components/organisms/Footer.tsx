@@ -53,7 +53,7 @@ const Footer = (props: Props) => {
           <Text
             variant="darkBackground"
             gridArea={{ sm: "a" }}
-            color="seashell"
+            color="lightGrey"
           >
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
@@ -63,7 +63,7 @@ const Footer = (props: Props) => {
           <Text
             variant="darkBackground"
             gridArea={{ sm: "b" }}
-            color="seashell"
+            color="lightGrey"
           >
             Copyright {date}. All Rights Reserved
           </Text>

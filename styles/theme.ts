@@ -1,10 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
+import Button from "./stylecomponents/button";
+import Input from "./stylecomponents/input";
+import Text from "./stylecomponents/text";
 
 const theme = extendTheme({
   colors: {
     alabaster: "#FAFAFA",
     black: "#000000",
     onyx: "#101010",
+    lightGrey: "#d3d3d3",
     peach: "#FBAF85",
     rawSienna: "#D87D4A",
     seashell: "#F1F1F1",
@@ -13,6 +17,9 @@ const theme = extendTheme({
     borderInput: "#CFCFCF",
     borderError: "#CD2C2C",
   },
+  fonts: { heading: `'Manrope', sans-serif`, body: `'Manrope', sans-serif` },
+  sizes: { container: { lg: "72.375rem" } },
+  components: { Button, Input, Text },
   styles: {
     global: {
       body: {

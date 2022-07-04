@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./index";
+import { RootState } from ".";
 
 const menuSlice = createSlice({
   name: "menu",
