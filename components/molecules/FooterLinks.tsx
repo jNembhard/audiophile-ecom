@@ -2,9 +2,7 @@ import { Stack, Box } from "@chakra-ui/react";
 import { navlinks } from "../../utils/navLinks";
 import Link from "next/link";
 
-type Props = {};
-
-const FooterLinks = (props: Props) => {
+const FooterLinks = () => {
   return (
     <Stack
       as="ul"

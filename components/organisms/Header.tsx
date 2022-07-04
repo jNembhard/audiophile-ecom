@@ -3,9 +3,7 @@ import SkipLink from "../atoms/SkipLink";
 import Navbar from "../molecules/Navbar";
 import NavMobile from "../molecules/NavMobile";
 
-type Props = {};
-
-function Header({}: Props) {
+function Header() {
   return (
     <Box
       as="header"

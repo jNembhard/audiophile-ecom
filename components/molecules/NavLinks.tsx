@@ -4,9 +4,7 @@ import { navlinks } from "../../utils/navLinks";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-type Props = {};
-
-const NavLinks = (props: Props) => {
+const NavLinks = () => {
   const { asPath } = useRouter();
   return (
     <Box as="nav" display={{ base: "none", lg: "block" }}>

@@ -1,9 +1,12 @@
 import { Button, Center } from "@chakra-ui/react";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { useCartModal } from "../../store/CartContextProvider";
+import { totalQuantity } from "../../store/CartSlice";
 
-type Props = {};
-
-const CartIcon = (props: Props) => {
+const CartIcon = () => {
+  const { onCartModalOpen } = useCartModal();
+  const quantity = useSelector(totalQuantity);
   return (
     <Button
       bg="transparent"
@@ -13,6 +16,7 @@ const CartIcon = (props: Props) => {
       aria-label="Open Cart"
       _hover={{ bg: "transparent" }}
       fontWeight="normal"
+      onClick={onCartModalOpen}
     >
       <Image
         src="/assets/shared/desktop/icon-cart.svg"
@@ -35,7 +39,7 @@ const CartIcon = (props: Props) => {
         borderRadius="50%"
         color="white"
       >
-        3
+        {quantity}
       </Center>
     </Button>
   );

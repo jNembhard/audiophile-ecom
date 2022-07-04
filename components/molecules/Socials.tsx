@@ -1,9 +1,7 @@
 import { HStack, IconButton } from "@chakra-ui/react";
 import { sociallinks } from "../../utils/socialLinks";
 
-type Props = {};
-
-const Socials = (props: Props) => {
+const Socials = () => {
   return (
     <HStack
       spacing={"1rem"}

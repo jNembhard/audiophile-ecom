@@ -1,8 +1,6 @@
 import { Button } from "@chakra-ui/react";
 
-type Props = {};
-
-const SkipLink = (props: Props) => {
+const SkipLink = () => {
   return (
     <Button
       as="a"

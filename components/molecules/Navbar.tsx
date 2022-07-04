@@ -4,9 +4,7 @@ import CartIcon from "../atoms/CartIcon";
 import Logo from "../atoms/Logo";
 import NavLinks from "./NavLinks";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <Container maxW="container.lg" px={6}>
       <Flex

@@ -52,3 +52,21 @@ const cartSlice = createSlice({
 });
 
 export const cartItems = (state: RootState): CartItem[] => state.cart.items;
+
+export const totalAmount = (state: RootState): number => {
+  const total = state.cart.items.reduce((cartTotal, currentItem) => {
+    const { price, quantity } = currentItem;
+    cartTotal += price * quantity;
+    return cartTotal;
+  }, 0);
+
+  return parseFloat(total.toFixed(2));
+};
+
+export const totalQuantity = (state: RootState): number =>
+  state.cart.totalQuantity;
+
+export const { addItemToCart, increaseQuantity, decreaseQuantity, clearCart } =
+  cartSlice.actions;
+
+export default cartSlice.reducer;

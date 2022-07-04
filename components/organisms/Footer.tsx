@@ -3,9 +3,7 @@ import Logo from "../atoms/Logo";
 import FooterLinks from "../molecules/FooterLinks";
 import Socials from "../molecules/Socials";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   let date = new Date().getFullYear();
 
   return (

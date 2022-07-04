@@ -2,9 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 
-type Props = {};
-
-const Logo = (props: Props) => {
+const Logo = () => {
   return (
     <Box mr={{ sm: "auto", lg: 0 }} lineHeight="0">
       <Link href="/">
