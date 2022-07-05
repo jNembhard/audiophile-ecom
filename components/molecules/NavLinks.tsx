@@ -17,6 +17,7 @@ const NavLinks = () => {
             fontWeight="bold"
             _hover={{ color: "rawSienna" }}
             textTransform="uppercase"
+            transition="color 0.2s linear"
             color={asPath === navlink.url ? "rawSienna" : "white"}
           >
             <NavLink href={navlink.url} active={asPath === navlink.url}>
