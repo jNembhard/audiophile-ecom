@@ -3,9 +3,7 @@ import YX1Earphones from "../molecules/home_gallery/YX1Earphones";
 import ZX7Speaker from "../molecules/home_gallery/ZX7Speaker";
 import ZX9Speaker from "../molecules/home_gallery/ZX9Speaker";
 
-type Props = {};
-
-const HomeProductGallery = (props: Props) => {
+const HomeProductGallery = () => {
   return (
     <VStack
       mt="7.5rem"
