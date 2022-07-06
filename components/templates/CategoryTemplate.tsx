@@ -20,8 +20,20 @@ const CategoryTemplate = (props: Props) => {
 
   return (
     <Box as="main" id="main">
-      <Heading>{query.category}</Heading>
-      <Container>
+      <Heading
+        as="h1"
+        bg="black"
+        color="white"
+        fontSize={["1.75rem", "2.5rem"]}
+        letterSpacing={["0.125rem", "0.0894rem"]}
+        textAlign="center"
+        textTransform="uppercase"
+        pt={["2rem", "6.5625rem"]}
+        pb={["2rem", "6.0625rem"]}
+      >
+        {query.category}
+      </Heading>
+      <Container maxW="container.lg" px={6}>
         <ProductList products={props.products} />
         <ProductLinks />
         <AudioGear />

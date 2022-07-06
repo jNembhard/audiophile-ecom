@@ -6,7 +6,11 @@ type Props = { products: Product[] };
 
 const ProductList = (props: Props) => {
   return (
-    <VStack>
+    <VStack
+      mt={{ base: "4rem" }}
+      spacing={{ base: "7.5rem" }}
+      mb={{ base: "7.5rem" }}
+    >
       {props.products.map((product) => (
         <ProductListItem key={product.id} {...product} />
       ))}

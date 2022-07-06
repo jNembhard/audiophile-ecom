@@ -37,7 +37,7 @@ const AudioGear = () => {
           mb={{ base: "2rem", sm: "2.5rem" }}
         >
           Bringing you the{" "}
-          <Box as="span" color="rawSienna">
+          <Box as="span" color="rawSienna" pr="0.5rem">
             best
           </Box>
           audio gear
