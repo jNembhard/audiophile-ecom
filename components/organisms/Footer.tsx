@@ -27,7 +27,7 @@ const Footer = () => {
           bg: "rawSienna",
           top: "0",
           left: "50%",
-          transform: "translatex(-50%)",
+          transform: "translateX(-50%)",
           "@media screen and (min-width: 30em)": {
             transform: "translateX(0)",
             left: "1.5rem",

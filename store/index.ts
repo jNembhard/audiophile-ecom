@@ -3,7 +3,7 @@ import menuReducer from "./menuSlice";
 import cartReducer from "./CartSlice";
 
 const store = configureStore({
-  reducer: { menu: menuReducer, cart: cartReducer },
+  reducer: { cart: cartReducer, menu: menuReducer },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

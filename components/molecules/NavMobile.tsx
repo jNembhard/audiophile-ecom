@@ -1,8 +1,8 @@
 import { Box, Stack } from "@chakra-ui/react";
-import { navlinks } from "../../utils/navLinks";
-import MobileLink from "./MobileLink";
 import { useSelector } from "react-redux";
 import { isMenuOpen } from "../../store/menuSlice";
+import MobileLink from "./MobileLink";
+import { navlinks } from "../../utils/navLinks";
 
 const NavMobile = () => {
   const openMenu = useSelector(isMenuOpen);
@@ -22,6 +22,7 @@ const NavMobile = () => {
       visibility={openMenu ? "visible" : "hidden"}
       transform={openMenu ? "translate(0)" : "translateY(-100%)"}
       transition="transform .5s ease-in-out, opacity .5s ease-in-out"
+      borderBottomRadius="0.5rem"
     >
       <Stack
         as="ul"

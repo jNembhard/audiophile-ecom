@@ -1,13 +1,13 @@
 import { Box, Image, Heading, HStack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-type Props = { navimg: string; text: string; url: string };
+type Props = { navimg?: string; text: string; url: string };
 
 const ProductLink = (props: Props) => {
   return (
     <Box
       as="li"
-      bg="lightGrey"
+      bg="seashell"
       position="relative"
       flex="1"
       textAlign="center"
@@ -16,6 +16,7 @@ const ProductLink = (props: Props) => {
       sx={{
         "&:hover p": { color: "rawSienna", "a:foucs": { outline: "none" } },
       }}
+      cursor="pointer"
     >
       <Link href={props.url} passHref>
         <Box pt="5.5rem" pb="1.357rem">

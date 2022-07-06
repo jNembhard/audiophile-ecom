@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "../store/index";
 import CartContextProvider from "../store/CartContextProvider";
 import CartModal from "../components/organisms/CartModal";
+import FocusPortal from "../components/atoms/FocusPortal";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
           <Footer />
           <CartModal />
+          <FocusPortal />
         </CartContextProvider>
       </Provider>
     </ChakraProvider>

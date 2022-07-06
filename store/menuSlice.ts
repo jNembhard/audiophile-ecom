@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from ".";
+import { RootState } from "../store/index";
 
 const menuSlice = createSlice({
   name: "menu",
   initialState: { openMenu: false },
   reducers: {
     toggleNav: (state) => {
-      state.openMenu != state.openMenu;
+      state.openMenu = !state.openMenu;
     },
     closeNav: (state) => {
       state.openMenu = false;

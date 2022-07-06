@@ -9,7 +9,7 @@ const AudioGear = () => {
       mt="7.5rem"
       spacing={{ base: "2.5rem", lg: 0 }}
     >
-      <Box as="picture">
+      <Box as="picture" flex="1" order={{ lg: 1 }} ml={{ lg: "1.875rem" }}>
         <source
           media="(min-width:62rem)"
           srcSet="/assets/shared/mobile/image-best-gear.jpg"
@@ -27,12 +27,13 @@ const AudioGear = () => {
         />
       </Box>
 
-      <Box flex="1" order={{ lg: 1 }} ml={{ lg: "1.875rem" }}>
+      <Box flex="1" marginStart={{ lg: 0 }}>
         <Heading
           as="h2"
           fontSize={{ base: "1.75rem", sm: "2.5rem" }}
           letterSpacing="0.0894rem"
           textTransform="uppercase"
+          maxW={{ base: "20ch", sm: "25ch", lg: "22ch" }}
           mb={{ base: "2rem", sm: "2.5rem" }}
         >
           Bringing you the{" "}
