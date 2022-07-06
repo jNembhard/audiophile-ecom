@@ -14,11 +14,15 @@
     "@emotion/styled": "^11.9.3",
     "@reduxjs/toolkit": "^1.8.3",
     "framer-motion": "^6.3.16",
+    "fs": "^0.0.1-security",
     "next": "12.2.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "use-url-search-params": "^2.5.1"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
