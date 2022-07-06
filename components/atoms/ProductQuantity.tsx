@@ -15,7 +15,7 @@ const ProductQuantity = (props: Props) => {
       width={props.width}
       height={props.height}
       alignItems="center"
-      bg="gray"
+      bg="lightGrey"
     >
       <Button handleClick={props.decrement} sign="-" />
       <Center fontSize="0.8125rem" fontWeight="bold" width="20%">
@@ -34,12 +34,12 @@ const Button = (props: ButtonProps) => {
       onClick={props.handleClick}
       fontSize="0.9375rem"
       fontWeight="bold"
-      color="lightGrey"
+      color="rgba(0,0,0,0.5)"
       width="40%"
       height="100%"
       p="0"
       bg="transparent"
-      _hover={{ bg: "lightGray", color: "rawSienna" }}
+      _hover={{ bg: "lightGrey", color: "rawSienna" }}
     >
       {props.sign}
     </ChakraButton>

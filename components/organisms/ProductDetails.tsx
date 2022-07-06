@@ -1,6 +1,7 @@
 import { Stack, Box, Image } from "@chakra-ui/react";
 import { Product } from "../../interfaces/Product";
 import AudioGear from "../molecules/AudioGear";
+import ProductDescription from "../molecules/ProductDescription";
 import ProductLinks from "./ProductLinks";
 
 type Props = {};
@@ -30,6 +31,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({
             />
           </picture>
         </Box>
+        <ProductDescription product={product} />
       </Stack>
       <ProductLinks />
       <AudioGear />
