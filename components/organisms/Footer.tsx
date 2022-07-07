@@ -51,7 +51,7 @@ const Footer = () => {
           <Text
             variant="darkBackground"
             gridArea={{ sm: "a" }}
-            color="lightGrey"
+            color="seashell"
           >
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
@@ -61,7 +61,7 @@ const Footer = () => {
           <Text
             variant="darkBackground"
             gridArea={{ sm: "b" }}
-            color="lightGrey"
+            color="seashell"
           >
             Copyright {date}. All Rights Reserved
           </Text>

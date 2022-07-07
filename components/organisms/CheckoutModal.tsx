@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -45,10 +44,13 @@ const CheckoutModal = () => {
       isCentered
     >
       <ModalOverlay px="1.5rem" />
-      CheckoutModal
-      <ModalContent>
+      <ModalContent
+        p={{ base: "2rem", md: "3rem" }}
+        mx={{ base: "1.5rem", md: "2rem" }}
+        maxWidth={{ sm: "35.6875rem", md: "33.75rem" }}
+      >
         <Image
-          src="/assets/shared/desktop/icon-check-mark.svg"
+          src="/assets/checkout/icon-order-confirmation.svg"
           mb={{ base: "1.5rem" }}
           boxSize="4rem"
           aria-hidden="true"
@@ -76,7 +78,7 @@ const CheckoutModal = () => {
           borderRadius="0.5rem"
         >
           <Box
-            bg="gray"
+            bg="seashell"
             display={items.length === 1 ? "flex" : "block"}
             flexBasis="55%"
             flexGrow={1}
@@ -118,7 +120,7 @@ const CheckoutModal = () => {
             flexBasis="45%"
             bg="black"
           >
-            <Text color="lightGrey" textTransform="uppercase" mb="0.5rem">
+            <Text color="grey" textTransform="uppercase" mb="0.5rem">
               Grand Total
             </Text>
             <Text fontWeight="bold" color="white">

@@ -30,9 +30,12 @@ const Summary = ({
 
   return (
     <Box
+      position={{ lg: "sticky" }}
+      top={{ lg: "1rem" }}
       bg="white"
       px={{ base: "1.5rem", sm: "2rem" }}
       py={{ base: "2rem" }}
+      borderRadius="0.5rem"
       flexGrow={{ lg: 1 }}
     >
       <Heading fontSize={{ base: "1.125rem" }} letterSpacing="0.0806rem">

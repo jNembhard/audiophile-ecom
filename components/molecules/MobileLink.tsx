@@ -7,7 +7,7 @@ const MobileLink = (props: Props) => {
   return (
     <Box
       as="li"
-      bg="gray"
+      bg="seashell"
       position="relative"
       flex="1"
       textAlign="center"
@@ -38,6 +38,7 @@ const MobileLink = (props: Props) => {
               mb="1rem"
               fontSize={{ base: "0.9357rem", lg: "1.125rem" }}
               letterSpacing={{ base: "0.0669em", lg: "0.0806em" }}
+              color="onyx"
             >
               {props.text}
             </Heading>
