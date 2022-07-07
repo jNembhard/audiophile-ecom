@@ -1,13 +1,17 @@
 import { IconButton } from "@chakra-ui/react";
 import Image from "next/image";
+import { useSelector, useDispatch } from "react-redux";
+import { isMenuOpen, toggleNav } from "../../store/menuSlice";
 
-type Props = {};
+const BurgerIcon = () => {
+  const menuOpen = useSelector(isMenuOpen);
+  const dispatch = useDispatch();
 
-const BurgerIcon = (props: Props) => {
   return (
     <IconButton
-      aria-label="Close Menu"
-      aria-expanded="true"
+      onClick={() => dispatch(toggleNav())}
+      aria-label={menuOpen ? "Close Menu" : "Open Menu"}
+      aria-expanded={menuOpen ? "true" : "false"}
       mr={{ sm: "2.625rem", lg: 0 }}
       variant="unstyled"
       isRound={true}
@@ -19,6 +23,7 @@ const BurgerIcon = (props: Props) => {
           src="/assets/shared/tablet/icon-hamburger.svg"
           width={16}
           height={15}
+          aria-hidden="true"
           alt=""
         />
       }

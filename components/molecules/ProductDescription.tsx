@@ -45,7 +45,7 @@ const ProductDescription = ({ product }: { product: Product }): JSX.Element => {
         fontSize={{ base: "1.75rem", lg: "2.5rem" }}
         letterSpacing="0.0625rem"
         mb={{ base: "1.5rem" }}
-        maxW={{ base: "13ch" }}
+        // maxW={{ base: "13ch" }}
       >
         {product.new && (
           <Box

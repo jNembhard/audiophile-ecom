@@ -20,8 +20,8 @@ const NavMobile = () => {
       display={{ base: "block", lg: "none" }}
       opacity={openMenu ? "1" : "0"}
       visibility={openMenu ? "visible" : "hidden"}
-      transform={openMenu ? "translate(0)" : "translateY(-100%)"}
-      transition="transform .5s ease-in-out, opacity .5s ease-in-out"
+      transform={openMenu ? "translate(0)" : "translateY(5%)"}
+      transition={"transform .5s ease-in-out, opacity .5s ease-in-out"}
       borderBottomRadius="0.5rem"
     >
       <Stack

@@ -25,22 +25,24 @@ const CartIcon = () => {
         aria-hidden="true"
         alt=""
       />
-      <Center
-        as="span"
-        p="0.6rem"
-        position="absolute"
-        top="-0.375rem"
-        bottom="-0.75rem"
-        left="1.5625rem"
-        bg="rawSienna"
-        width="1rem"
-        height="1rem"
-        fontSize=".8125rem"
-        borderRadius="50%"
-        color="white"
-      >
-        {quantity}
-      </Center>
+      {!!quantity && (
+        <Center
+          as="span"
+          p="0.6rem"
+          position="absolute"
+          top="-1rem"
+          bottom="-0.75rem"
+          left="1rem"
+          bg="rawSienna"
+          width="1rem"
+          height="1rem"
+          fontSize=".8125rem"
+          borderRadius="50%"
+          color="white"
+        >
+          {quantity}
+        </Center>
+      )}
     </Button>
   );
 };

@@ -18,7 +18,7 @@ const CartItem = (props: Props) => {
   return (
     <HStack as="li" align="center" listStyleType="none" justify="space-between">
       <HStack align="center" sx={{ img: { borderRadius: ".5rem" } }}>
-        <Image src={props.item.cartImg} width={64} alt="" />
+        <Image src={props.item.cartImg} width={64} height={64} alt="" />
         <Box ml="1rem">
           <Text
             color="black"
@@ -26,7 +26,7 @@ const CartItem = (props: Props) => {
             fontWeight="bold"
             textTransform="uppercase"
           >
-            {props.item.name}
+            {props.item.shortName}
           </Text>
           <Text fontSize="0.875rem" fontWeight="bold">
             ${props.item.price.toLocaleString("en-US")}
