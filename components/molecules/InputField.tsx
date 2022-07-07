@@ -1,4 +1,4 @@
-import { forwardRef, useRef } from "react";
+import { forwardRef } from "react";
 import { Box, Input, Flex, Text } from "@chakra-ui/react";
 
 type Props = React.ComponentPropsWithoutRef<typeof Input> & {
@@ -10,8 +10,7 @@ type Props = React.ComponentPropsWithoutRef<typeof Input> & {
   [prop: string]: unknown;
 };
 
-const InputField = forwardRef<HTMLInputElement, Props>((props: Props) => {
-  const internalRef = useRef<HTMLInputElement>(null);
+const InputField = forwardRef<HTMLInputElement, Props>((props, ref) => {
   const { label, placeholder, type = "text", gridArea, ...other } = props;
 
   let errorMessage;
@@ -48,7 +47,7 @@ const InputField = forwardRef<HTMLInputElement, Props>((props: Props) => {
       <Input
         id={label}
         {...other}
-        ref={internalRef}
+        ref={ref}
         type={type}
         placeholder={placeholder}
         border="1px solid"
@@ -59,5 +58,5 @@ const InputField = forwardRef<HTMLInputElement, Props>((props: Props) => {
   );
 });
 
-InputField.displayName = "Input Field";
+InputField.displayName = "InputField";
 export default InputField;
