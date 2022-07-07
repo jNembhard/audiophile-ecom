@@ -30,12 +30,17 @@ const InputField = forwardRef<HTMLInputElement, Props>((props: Props) => {
           fontWeight="bold"
           display="inline-block"
           mb={2}
-          color={props["errors"] ? "inputError" : "black"}
+          color={props["errors"] ? "borderError" : "black"}
         >
           {label}
         </Box>
         {props.errors && (
-          <Text fontSize="0.75rem" color="inputError" mb={2} aria-live="polite">
+          <Text
+            fontSize="0.75rem"
+            color="borderError"
+            mb={2}
+            aria-live="polite"
+          >
             {errorMessage}
           </Text>
         )}
@@ -47,11 +52,12 @@ const InputField = forwardRef<HTMLInputElement, Props>((props: Props) => {
         type={type}
         placeholder={placeholder}
         border="1px solid"
-        borderColor={props["errors"] ? "inputError" : "inputBorder"}
+        borderColor={props["errors"] ? "borderError" : "borderInput"}
+        _placeholder={{ fontWeight: "normal" }}
       />
     </Box>
   );
 });
 
-InputField.displayName = "Form Field";
+InputField.displayName = "Input Field";
 export default InputField;

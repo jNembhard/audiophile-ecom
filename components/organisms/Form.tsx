@@ -4,6 +4,9 @@ import {
   useRadioGroup,
   Stack,
   SimpleGrid,
+  Text,
+  HStack,
+  Image,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -12,6 +15,8 @@ import { useCartModal } from "../../store/CartContextProvider";
 import React from "react";
 import Legend from "../atoms/Legend";
 import InputField from "../molecules/InputField";
+import Radio from "../atoms/Radio";
+import Summary from "../molecules/Summary";
 
 type InputProps = {
   name: string;
@@ -35,7 +40,7 @@ const Form = () => {
   const options = ["e-money", "Cash on Delivery"];
   const { onCheckoutModalOpen } = useCartModal();
   const [checkedOption, setCheckedOption] = useState(options[0]);
-  const [isDisabled, setDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleChange = (value: string) => {
     setCheckedOption(value);
@@ -75,6 +80,7 @@ const Form = () => {
         pb={{ base: "2rem", lg: "3rem" }}
         flex={{ lg: "1 1 65%" }}
         borderRadius="0.5rem"
+        maxW={{ lg: "45.625rem" }}
         bg="white"
       >
         <Heading as="h1" fontSize={{ base: "1.75rem" }} mb={{ base: "2rem" }}>
@@ -179,8 +185,73 @@ const Form = () => {
         </Box>
         <Box as="fieldset">
           <Legend>Payment Details</Legend>
+          <SimpleGrid
+            gridTemplateColumns={{ base: "1fr", sm: "1fr 1fr" }}
+            gridGap={{ sm: "1rem" }}
+          >
+            <Text fontSize="0.75rem" fontWeight="bold" mb={2} color="black">
+              Payment Method
+            </Text>
+            <Box {...group}>
+              {options.map((value) => {
+                const radio = getRadioProps({ value });
+                return (
+                  <Radio key={value} {...radio}>
+                    {value}
+                  </Radio>
+                );
+              })}
+            </Box>
+          </SimpleGrid>
+          {checkedOption === options[0] ? (
+            <SimpleGrid
+              gridTemplateColumns={{ base: "1fr", sm: "1fr 1fr" }}
+              gridGap={{ base: "1rem" }}
+              mt={{ base: "1rem" }}
+            >
+              <InputField
+                label="e-Money Number"
+                placeholder="238521993"
+                errors={errors.eMoneyNumber}
+                {...register("eMoneyNumber", {
+                  required: "Field cannot be empty",
+                  pattern: {
+                    value: /^[0-9]{9}$/,
+                    message: "Wrong format",
+                  },
+                })}
+                aria-invalid={errors.eMoneyNumber ? "true" : "false"}
+                type="number"
+              />
+              <InputField
+                label="e-Money Pin"
+                placeholder="6891"
+                errors={errors.eMoneyPin}
+                {...register("eMoneyPin", {
+                  required: "Field cannot be empty",
+                  pattern: {
+                    value: /^[0-9]{4}$/,
+                    message: "Wrong format",
+                  },
+                })}
+                aria-invalid={errors.eMoneyPin ? "true" : "false"}
+                type="number"
+              />
+            </SimpleGrid>
+          ) : (
+            <HStack align="center" spacing="2rem" mt="1.5rem">
+              <Image src="/assets/checkout/icon-cash-on-delivery.svg" alt="" />
+              <Text>
+                The &rsquo;Cash on Delivery&rsquo; option enables you to pay in
+                cash when our delivery courier arrives at your residence. Just
+                make sure your address is correct so that your ourder wil not be
+                cancelled.
+              </Text>
+            </HStack>
+          )}
         </Box>
       </Box>
+      <Summary isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
     </Stack>
   );
 };
