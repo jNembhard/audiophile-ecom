@@ -39,7 +39,7 @@ const ProductDescription = ({ product }: { product: Product }): JSX.Element => {
     setQuantity((state) => state - 1);
   };
   return (
-    <Box>
+    <Box textAlign={{ base: "left" }} flexBasis={{ sm: "60%", lg: "50%" }}>
       <Heading
         as="h2"
         fontSize={{ base: "1.75rem", lg: "2.5rem" }}
