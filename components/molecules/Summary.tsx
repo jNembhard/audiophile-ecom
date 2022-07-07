@@ -14,18 +14,19 @@ import useCartTotals from "../../hooks/useCartTotals";
 import LineSummary from "./LineSummary";
 import { SHIPPING_FEE } from "../../variables/rates";
 
-type Props = {
+const Summary = ({
+  isDisabled,
+  setIsDisabled,
+}: {
   isDisabled: boolean;
   setIsDisabled: Dispatch<SetStateAction<boolean>>;
-};
-
-const Summary = (props: Props) => {
+}): JSX.Element => {
   const items = useSelector(cartItems);
   const { cartTotal, tax, grandTotal } = useCartTotals();
 
   useEffect(() => {
-    props.setIsDisabled(items.length < 1);
-  }, [items, props.setIsDisabled]);
+    setIsDisabled(items.length < 1);
+  }, [items, setIsDisabled]);
 
   return (
     <Box
@@ -80,19 +81,14 @@ const Summary = (props: Props) => {
       <Box mt="2rem">
         <LineSummary name="total" amount={cartTotal} />
         <LineSummary name="shipping" amount={SHIPPING_FEE} />
-        <LineSummary name="vat" amount={tax} />
+        <LineSummary name="vat (included)" amount={tax} />
         <LineSummary
           name="Grand Total"
           amount={grandTotal}
           mt="1.5rem"
           grandTotal
         />
-        <Button
-          type="submit"
-          width="100%"
-          mt="2rem"
-          aria-disabled={props.isDisabled}
-        >
+        <Button type="submit" width="100%" mt="2rem" aria-disabled={isDisabled}>
           Continue & Pay
         </Button>
       </Box>

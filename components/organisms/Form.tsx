@@ -37,7 +37,7 @@ const Form = () => {
     formState: { errors },
   } = useForm<InputProps>({ mode: "onBlur" });
 
-  const options = ["e-money", "Cash on Delivery"];
+  const options = ["e-Money", "Cash on Delivery"];
   const { onCheckoutModalOpen } = useCartModal();
   const [checkedOption, setCheckedOption] = useState(options[0]);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -48,7 +48,7 @@ const Form = () => {
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "Payment Details",
-    defaultValue: "e-money",
+    defaultValue: "e-Money",
     onChange: handleChange,
   });
 
@@ -57,11 +57,10 @@ const Form = () => {
   const onSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
 
-    if (isDisabled) {
-      return handleSubmit(() => {
-        onCheckoutModalOpen;
-      })(e);
-    }
+    if (isDisabled) return;
+    handleSubmit(() => {
+      onCheckoutModalOpen();
+    })(e);
   };
 
   return (
@@ -150,6 +149,7 @@ const Form = () => {
             <InputField
               label="ZIPCode"
               placeholder="10001"
+              type="email"
               errors={errors.ZIPCode}
               {...register("ZIPCode", {
                 required: "Field cannot be empty",
@@ -224,7 +224,7 @@ const Form = () => {
                 type="number"
               />
               <InputField
-                label="e-Money Pin"
+                label="e-Money PIN"
                 placeholder="6891"
                 errors={errors.eMoneyPin}
                 {...register("eMoneyPin", {

@@ -8,6 +8,7 @@ import store from "../store/index";
 import CartContextProvider from "../store/CartContextProvider";
 import CartModal from "../components/organisms/CartModal";
 import FocusPortal from "../components/atoms/FocusPortal";
+import CheckoutModal from "../components/organisms/CheckoutModal";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Footer />
           <CartModal />
           <FocusPortal />
+          <CheckoutModal />
         </CartContextProvider>
       </Provider>
     </ChakraProvider>
