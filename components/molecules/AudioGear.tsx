@@ -11,12 +11,12 @@ const AudioGear = () => {
     >
       <Box as="picture" flex="1" order={{ lg: 1 }} ml={{ lg: "1.875rem" }}>
         <source
-          media="(min-width:62rem)"
-          srcSet="/assets/shared/mobile/image-best-gear.jpg"
+          media="(min-width: 62em)"
+          srcSet="/assets/shared/desktop/image-best-gear.jpg"
         />
         <source
-          media="(min-width:62rem)"
-          srcSet="/assets/shared/mobile/image-best-gear.jpg"
+          media="(min-width: 30em)"
+          srcSet="/assets/shared/tablet/image-best-gear.jpg"
         />
         <Image
           src="/assets/shared/mobile/image-best-gear.jpg"
@@ -33,7 +33,7 @@ const AudioGear = () => {
           fontSize={{ base: "1.75rem", sm: "2.5rem" }}
           letterSpacing="0.0894rem"
           textTransform="uppercase"
-          maxW={{ base: "20ch", sm: "25ch", lg: "22ch" }}
+          maxWidth={{ base: "25ch", sm: "30ch", lg: "22ch" }}
           mb={{ base: "2rem", sm: "2.5rem" }}
         >
           Bringing you the{" "}
