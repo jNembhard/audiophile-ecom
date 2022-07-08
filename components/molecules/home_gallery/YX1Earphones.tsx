@@ -28,14 +28,14 @@ const YX1Earphones = () => {
         <Box
           position="relative"
           bg="seashell"
-          height="100%"
+          // height="100%"
           pl={{ base: "1.5rem", sm: "2rem", md: "2.5625rem", lg: "5.9375rem" }}
           py={{ base: "2.5625rem", sm: "unset" }}
           borderRadius="0.5rem"
         >
           <Box
             position={{ sm: "absolute" }}
-            top={{ sm: "50%" }}
+            top="50%"
             pr={{ sm: "1rem" }}
             transform={["translateY(0)", "translateY(-50%)"]}
           >
