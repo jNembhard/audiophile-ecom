@@ -35,6 +35,7 @@ const AudioGear = () => {
           textTransform="uppercase"
           maxWidth={{ base: "20ch", sm: "25ch", lg: "22ch" }}
           mb={{ base: "2rem", sm: "2.5rem" }}
+          mx={{ base: "auto", lg: "unset" }}
         >
           Bringing you the{" "}
           <Box as="span" color="rawSienna">

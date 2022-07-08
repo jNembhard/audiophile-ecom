@@ -26,7 +26,7 @@ const YX1Earphones = () => {
       </Box>
       <Box>
         <Box
-          position="relative"
+          position={{ sm: "relative" }}
           bg="seashell"
           height="100%"
           pl={{ base: "1.5rem", sm: "2rem", md: "2.5625rem", lg: "5.9375rem" }}
