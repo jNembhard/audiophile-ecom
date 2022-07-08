@@ -32,11 +32,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![audiophile landing page](/public/audiophile-landing-page.png)
 
 ### Links
 
-- Live Site URL:
+- Live Site URL: [Audiophile](https://audiophiles.vercel.app)
 
 ## My process
 

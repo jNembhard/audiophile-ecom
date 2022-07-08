@@ -9,7 +9,7 @@ type Props = {
 
 const Motion = (props: Props) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [ref, inView] = useInView({ threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
