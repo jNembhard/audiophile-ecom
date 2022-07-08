@@ -24,28 +24,30 @@ const YX1Earphones = () => {
           alt="YX1 Earphones"
         />
       </Box>
-      <Box
-        position="relative"
-        bg="seashell"
-        height="100%"
-        pl={{ base: "1.5rem", sm: "2rem", md: "2.5625rem", lg: "5.9375rem" }}
-        py={{ base: "2.5625rem", sm: "unset" }}
-        borderRadius="0.5rem"
-      >
+      <Box>
         <Box
-          position={{ sm: "absolute" }}
-          top="50%"
-          pr={{ sm: "1rem" }}
-          transform={["translateY(0)", "translateY(-50%)"]}
+          position="relative"
+          bg="seashell"
+          height="100%"
+          pl={{ base: "1.5rem", sm: "2rem", md: "2.5625rem", lg: "5.9375rem" }}
+          py={{ base: "2.5625rem", sm: "unset" }}
+          borderRadius="0.5rem"
         >
-          <Heading as="h2" fontSize="1.75rem" color="black" mb="2rem">
-            YX1 Earphones
-          </Heading>
-          <Link href="/earphones/yx1-earphones" passHref>
-            <Button as="a" variant="secondary">
-              See Product
-            </Button>
-          </Link>
+          <Box
+            position={{ sm: "absolute" }}
+            top="50%"
+            pr={{ sm: "1rem" }}
+            transform={["translateY(0)", "translateY(-50%)"]}
+          >
+            <Heading as="h2" fontSize="1.75rem" color="black" mb="2rem">
+              YX1 Earphones
+            </Heading>
+            <Link href="/earphones/yx1-earphones" passHref>
+              <Button as="a" variant="secondary">
+                See Product
+              </Button>
+            </Link>
+          </Box>
         </Box>
       </Box>
     </SimpleGrid>

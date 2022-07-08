@@ -33,7 +33,7 @@ const AudioGear = () => {
           fontSize={{ base: "1.75rem", sm: "2.5rem" }}
           letterSpacing="0.0894rem"
           textTransform="uppercase"
-          maxWidth={{ base: "25ch", sm: "30ch", lg: "22ch" }}
+          maxWidth={{ base: "20ch", sm: "25ch", lg: "22ch" }}
           mb={{ base: "2rem", sm: "2.5rem" }}
         >
           Bringing you the{" "}
