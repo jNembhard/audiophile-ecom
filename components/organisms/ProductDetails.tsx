@@ -1,9 +1,10 @@
 import { Stack, Box, Image } from "@chakra-ui/react";
 import { Product } from "../../interfaces/Product";
-import AudioGear from "../molecules/AudioGear";
 import ProductDescription from "../molecules/ProductDescription";
 import ProductFeatures from "../molecules/ProductFeatures";
 import ProductGallery from "../molecules/ProductGallery";
+import Motion from "./Motion";
+import MotionAudioGear from "./MotionAudioGear";
 import ProductLinks from "./ProductLinks";
 import ProductOthers from "./ProductOthers";
 
@@ -40,10 +41,12 @@ const ProductDetails: React.FC<{ product: Product }> = ({
         features={product.features}
         includedItems={product.includedItems}
       />
-      <ProductGallery {...product?.gallery} />
+      <Motion>
+        <ProductGallery {...product?.gallery} />
+      </Motion>
       <ProductOthers other={product.others} />
       <ProductLinks />
-      <AudioGear />
+      <MotionAudioGear />
     </>
   );
 };

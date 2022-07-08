@@ -1,5 +1,7 @@
 import { Box, Heading, Stack } from "@chakra-ui/react";
 import OtherProductLink from "../molecules/OtherProductLink";
+import { useInView } from "react-intersection-observer";
+import Motion from "./Motion";
 
 export type OtherProductProps = {
   slug: string;
@@ -26,7 +28,9 @@ const ProductOthers: React.FC<{ other: OtherProductProps[] | undefined }> = ({
         spacing={{ base: "3.5rem", md: "1rem", lg: "1.875rem" }}
       >
         {other?.map((product: OtherProductProps) => (
-          <OtherProductLink key={product.slug} {...product} />
+          <Motion key={product.slug}>
+            <OtherProductLink {...product} />
+          </Motion>
         ))}
       </Stack>
     </Box>

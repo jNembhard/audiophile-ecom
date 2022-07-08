@@ -1,7 +1,12 @@
 import { Box, Container, Heading, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const HeroBanner = () => {
+  const MotionHeading = motion(Heading);
+  const MotionText = motion(Text);
+  const MotionButton = motion(Button);
+
   return (
     <Box
       position="relative"
@@ -34,7 +39,7 @@ const HeroBanner = () => {
         }}
       ></Box>
       <Container maxW="container.lg" px={6}>
-        <Heading
+        <MotionHeading
           as="h1"
           color="white"
           fontSize={["2.25rem", "3.5rem"]}
@@ -43,6 +48,11 @@ const HeroBanner = () => {
           mb={6}
           mx={{ base: "auto", lg: 0 }}
           maxW="15ch"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { delay: "0.5", duration: "1" },
+          }}
         >
           <Box
             as="strong"
@@ -55,22 +65,32 @@ const HeroBanner = () => {
             New Product
           </Box>
           XX99 Mark II Headphones
-        </Heading>
-        <Text
+        </MotionHeading>
+        <MotionText
           color="lightGrey"
           fontSize="0.9375rem"
           lineHeight="1.7"
           maxWidth="38ch"
           mx={{ base: "auto", lg: 0 }}
           mb={10}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: "1", duration: "1" } }}
         >
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
-        </Text>
+        </MotionText>
         <Link href="/headphones/xx99-mark-two-headphones" passHref>
-          <Button as="a" cursor="pointer">
+          <MotionButton
+            as="a"
+            cursor="pointer"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: "1.5", duration: "1" },
+            }}
+          >
             See Product
-          </Button>
+          </MotionButton>
         </Link>
       </Container>
     </Box>

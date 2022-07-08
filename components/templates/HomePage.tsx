@@ -2,7 +2,7 @@ import HeroBanner from "../organisms/HeroBanner";
 import { Container } from "@chakra-ui/react";
 import ProductLinks from "../organisms/ProductLinks";
 import HomeProductGallery from "../organisms/HomeProductGallery";
-import AudioGear from "../molecules/AudioGear";
+import MotionAudioGear from "../organisms/MotionAudioGear";
 
 const HomePage = () => {
   return (
@@ -11,7 +11,7 @@ const HomePage = () => {
       <Container maxW="container.lg" px={6}>
         <ProductLinks />
         <HomeProductGallery />
-        <AudioGear />
+        <MotionAudioGear />
       </Container>
     </main>
   );

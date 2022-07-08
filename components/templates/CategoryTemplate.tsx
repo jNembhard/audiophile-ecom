@@ -5,8 +5,9 @@ import { useDispatch } from "react-redux";
 import { Product } from "../../interfaces/Product";
 import { closeNav } from "../../store/menuSlice";
 import ProductLinks from "../organisms/ProductLinks";
-import AudioGear from "../molecules/AudioGear";
 import ProductList from "../organisms/ProductList";
+import MotionAudioGear from "../organisms/MotionAudioGear";
+import Motion from "../organisms/Motion";
 
 type Props = { products: Product[] };
 
@@ -36,7 +37,7 @@ const CategoryTemplate = (props: Props) => {
       <Container maxW="container.lg" px={6}>
         <ProductList products={props.products} />
         <ProductLinks />
-        <AudioGear />
+        <MotionAudioGear />
       </Container>
     </Box>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Image, Heading, Button, SimpleGrid } from "@chakra-ui/react";
 import Link from "next/link";
+import Motion from "../../organisms/Motion";
 
 const YX1Earphones = () => {
   return (
@@ -8,23 +9,25 @@ const YX1Earphones = () => {
       columns={[1, 2]}
       spacing={{ base: "1.5rem", sm: "0.75rem", lg: "1.875rem" }}
     >
-      <Box as="picture" height="100%">
-        <source
-          media="(min-width: 62em)"
-          srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
-        />
-        <source
-          media="(min-width: 30em)"
-          srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
-        />
-        <Image
-          src="/assets/home/mobile/image-earphones-yx1.jpg"
-          objectFit="cover"
-          borderRadius="0.5rem"
-          alt="YX1 Earphones"
-        />
-      </Box>
-      <Box>
+      <Motion>
+        <Box as="picture" height="100%">
+          <source
+            media="(min-width: 62em)"
+            srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
+          />
+          <source
+            media="(min-width: 30em)"
+            srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
+          />
+          <Image
+            src="/assets/home/mobile/image-earphones-yx1.jpg"
+            objectFit="cover"
+            borderRadius="0.5rem"
+            alt="YX1 Earphones"
+          />
+        </Box>
+      </Motion>
+      <Motion transition={{ ease: "easeOut", duration: 1, delay: 0.5 }}>
         <Box
           position="relative"
           bg="seashell"
@@ -49,7 +52,7 @@ const YX1Earphones = () => {
             </Link>
           </Box>
         </Box>
-      </Box>
+      </Motion>
     </SimpleGrid>
   );
 };
