@@ -7,10 +7,10 @@ const HeroBanner = () => {
       position="relative"
       overflow="hidden"
       zIndex="1"
-      bg="black"
+      bg="#191919"
       textAlign={{ base: "center", lg: "left" }}
       pt={{ base: "6rem", sm: "8rem", lg: "10rem" }}
-      pb="8rem"
+      pb="7rem"
     >
       <Box
         _after={{

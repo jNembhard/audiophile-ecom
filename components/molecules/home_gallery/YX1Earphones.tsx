@@ -2,9 +2,7 @@ import React from "react";
 import { Box, Image, Heading, Button, SimpleGrid } from "@chakra-ui/react";
 import Link from "next/link";
 
-type Props = {};
-
-const YX1Earphones = (props: Props) => {
+const YX1Earphones = () => {
   return (
     <SimpleGrid
       columns={[1, 2]}
@@ -12,11 +10,11 @@ const YX1Earphones = (props: Props) => {
     >
       <Box as="picture" height="100%">
         <source
-          media="(min-width: 62rem)"
+          media="(min-width: 62em)"
           srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
         />
         <source
-          media="(min-width: 30rem)"
+          media="(min-width: 30em)"
           srcSet="/assets/home/tablet/image-earphones-yx1.jpg"
         />
         <Image
