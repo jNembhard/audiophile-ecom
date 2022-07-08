@@ -122,6 +122,29 @@ Redux toolkit also allows you to create reducer logic in a mutable way. Think in
 
 One of the many advantages of NextJS revolves around the ability to generate pages dynamically. How is that done here? A good example would be the product page.
 
+```typescript
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getProductPaths().map((path) => ({
+    params: { category: path.category, slug: path.slug },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const params = context.params as Params;
+  const product: Product | undefined = getProductBySlug(params.slug);
+
+  return { props: { product } };
+};
+```
+
+`getStaticProps` is used to render the page at build time before a user makes a request. This also has the added affect of improving SEO. `getStaticProps` generates `HTML` and `JSON` files and then serves that content to users.
+
+`getStaticPaths` is used to handle the dynamic routing portion. This defines a list of path that will statically pre-render all specified paths. This function runs only during build in production and must be used alongside `getStaticProps`
+
+So overall, what does this mean? `getStaticProps` pull in the data that needs to be passed for the routes to be hydrated properly; This is a process for importing data into an object and the serving the content through `getStaticPaths`.
+
 ### Continued development
 
 A major goal with this project is to create a Full Stack application and connecting this store to Stripe.

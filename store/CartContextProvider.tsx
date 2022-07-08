@@ -25,9 +25,11 @@ export const useCartModal = (): ContextProps => {
   return useContext(CartContext);
 };
 
-const CartContextProvider: React.FC = (
-  props: PropsWithChildren<{}>
-): JSX.Element => {
+const CartContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element => {
   const {
     isOpen: isCartModalOpen,
     onOpen: onCartModalOpen,
@@ -57,7 +59,7 @@ const CartContextProvider: React.FC = (
         onCheckoutModalClose,
       }}
     >
-      {props.children}
+      {children}
     </CartContext.Provider>
   );
 };
