@@ -48,21 +48,13 @@ const Footer = () => {
           gap="3rem"
           mt="3rem"
         >
-          <Text
-            variant="darkBackground"
-            gridArea={{ sm: "a" }}
-            color="seashell"
-          >
+          <Text variant="darkBackground" gridArea={{ sm: "a" }} color="gray">
             Audiophile is an all in one stop to fulfill your audio needs.
             We&apos;re a small team of music lovers and sound specialists who
             are devoted to helping you get the most out of personal audio. Come
             and visit our demo facility - we&apos;re open 7 days a week.
           </Text>
-          <Text
-            variant="darkBackground"
-            gridArea={{ sm: "b" }}
-            color="seashell"
-          >
+          <Text variant="darkBackground" gridArea={{ sm: "b" }} color="gray">
             Copyright {date}. All Rights Reserved
           </Text>
           <Box
