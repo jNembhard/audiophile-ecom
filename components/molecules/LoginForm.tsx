@@ -2,12 +2,9 @@ import { useState } from "react";
 import {
   Flex,
   Heading,
-  Input,
   Button,
-  InputGroup,
   Stack,
   Box,
-  Link,
   Avatar,
   FormControl,
   useToast,
@@ -23,6 +20,7 @@ import {
 import { useDispatch } from "react-redux";
 import { login } from "../../store/userSlice";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 type LoginProps = { emailAddress: string; password: string };
 
@@ -60,11 +58,11 @@ const LoginForm = () => {
       });
   };
 
-  const signup = () => {
+  const signUp = () => {
     if (!name) {
       toast({
         title: "Please enter a full name",
-        status: "success",
+        status: "error",
         duration: 4500,
         position: "top-left",
         isClosable: true,
@@ -102,6 +100,7 @@ const LoginForm = () => {
       width="100wh"
       height="100vh"
       backgroundColor="lightGrey"
+      mb={{ base: "-7.5rem", sm: "-12.5rem" }}
       justifyContent="center"
       alignItems="center"
     >
@@ -125,6 +124,7 @@ const LoginForm = () => {
             p="1rem"
             backgroundColor="whiteAlpha.900"
             boxShadow="md"
+            onSubmit={appLogin}
           >
             <FormControl>
               <InputField
@@ -154,23 +154,27 @@ const LoginForm = () => {
                 aria-invalid={errors.password ? "true" : "false"}
               />
             </FormControl>
-            <Button
-              type="submit"
-              variant="solid"
-              color="white"
-              bg="onyx"
-              _hover={{ bg: "rawSienna" }}
-            >
-              Login
-            </Button>
+            <Link href="/" passHref>
+              <Button
+                as="a"
+                type="submit"
+                variant="solid"
+                color="white"
+                bg="onyx"
+                _hover={{ bg: "rawSienna" }}
+                cursor="pointer"
+              >
+                Login
+              </Button>
+            </Link>
           </Stack>
         </Box>
       </Stack>
       <Box>
         New to us?{" "}
-        <Link color="peach" href="/login">
+        <Box as="span" color="rawSienna" onClick={signUp}>
           Sign Up
-        </Link>
+        </Box>
       </Box>
     </Flex>
   );

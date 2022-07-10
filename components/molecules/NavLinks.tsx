@@ -8,7 +8,7 @@ const NavLinks = () => {
   const { asPath } = useRouter();
   return (
     <Box as="nav" display={{ base: "none", lg: "block" }}>
-      <HStack as="ul" display="flex" spacing={9} listStyleType="none">
+      <HStack as="ul" display="flex" spacing={8} listStyleType="none">
         {navlinks.map((navlink) => (
           <Box
             key={navlink.id}

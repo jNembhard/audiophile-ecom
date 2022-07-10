@@ -1,7 +1,7 @@
 import { Container, Flex } from "@chakra-ui/react";
 import BurgerIcon from "../atoms/BurgerIcon";
-import CartIcon from "../atoms/CartIcon";
 import Logo from "../atoms/Logo";
+import CartLogin from "./CartLogin";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
         <BurgerIcon />
         <Logo />
         <NavLinks />
-        <CartIcon />
+        <CartLogin />
       </Flex>
     </Container>
   );

@@ -1,11 +1,13 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Flex } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { isMenuOpen } from "../../store/menuSlice";
+import { isMenuOpen, toggleNav } from "../../store/menuSlice";
 import MobileLink from "./MobileLink";
 import { navlinks } from "../../utils/navLinks";
+import LogoutLink from "../atoms/LogoutLink";
 
 const NavMobile = () => {
   const openMenu = useSelector(isMenuOpen);
+  const toggle = useSelector(toggleNav);
 
   return (
     <Box
@@ -20,10 +22,13 @@ const NavMobile = () => {
       display={{ base: "block", lg: "none" }}
       opacity={openMenu ? "1" : "0"}
       visibility={openMenu ? "visible" : "hidden"}
-      transform={openMenu ? "translate(0)" : "translateY(5%)"}
+      transform={openMenu ? "translateY(0)" : "translateY(5%)"}
       transition={"transform .5s ease-in-out, opacity .5s ease-in-out"}
       borderBottomRadius="0.5rem"
     >
+      <Flex align="center" justify="center" mt="1rem">
+        <LogoutLink base="block" />
+      </Flex>
       <Stack
         as="ul"
         direction={{ base: "column", sm: "row" }}
