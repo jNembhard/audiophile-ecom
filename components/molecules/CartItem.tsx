@@ -15,6 +15,7 @@ const CartItem = (props: Props) => {
   const decrement = () => {
     dispatch(decreaseQuantity(props.item.id));
   };
+
   return (
     <HStack as="li" align="center" listStyleType="none" justify="space-between">
       <HStack align="center" sx={{ img: { borderRadius: ".5rem" } }}>

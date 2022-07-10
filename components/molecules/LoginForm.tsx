@@ -8,6 +8,7 @@ import {
   Avatar,
   FormControl,
   useToast,
+  Input,
 } from "@chakra-ui/react";
 import Legend from "../atoms/Legend";
 import InputField from "../molecules/InputField";
@@ -22,7 +23,7 @@ import { login } from "../../store/userSlice";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 
-type LoginProps = { emailAddress: string; password: string };
+type LoginProps = { name: string; emailAddress: string; password: string };
 
 const LoginForm = () => {
   const {
@@ -88,6 +89,7 @@ const LoginForm = () => {
           title: "Account creation failed.",
           description: "There was an error creating your account.",
           status: "error",
+          position: "top-left",
           duration: 5000,
           isClosable: true,
         });
@@ -127,52 +129,51 @@ const LoginForm = () => {
             onSubmit={appLogin}
           >
             <FormControl>
-              <InputField
-                label="Email Address"
-                type="email"
-                placeholder="nembhardjl@outlook.com"
-                errors={errors.emailAddress}
-                {...register("emailAddress", {
-                  required: "Field cannot be empty",
-                  pattern: {
-                    value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
-                    message: "Please enter a valid email",
-                  },
-                })}
-                aria-invalid={errors.emailAddress ? "true" : "false"}
+              <Input
+                type="text"
+                placeholder="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                _placeholder={{ color: "lightGrey" }}
               />
             </FormControl>
             <FormControl>
-              <InputField
-                label="Password"
-                type="password"
-                placeholder="password"
-                errors={errors.password}
-                {...register("password", {
-                  required: "Field cannot be empty",
-                })}
-                aria-invalid={errors.password ? "true" : "false"}
+              <Input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="nembhardjl@outlook.com"
+                type="email"
+                _placeholder={{ color: "lightGrey" }}
               />
             </FormControl>
-            <Link href="/" passHref>
-              <Button
-                as="a"
-                type="submit"
-                variant="solid"
-                color="white"
-                bg="onyx"
-                _hover={{ bg: "rawSienna" }}
-                cursor="pointer"
-              >
-                Login
-              </Button>
-            </Link>
+            <FormControl>
+              <Input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                type="password"
+                _placeholder={{ color: "lightGrey" }}
+              />
+            </FormControl>
+            {/* <Link href="/" passHref> */}
+            <Button
+              // as="a"
+              type="submit"
+              variant="solid"
+              color="white"
+              bg="onyx"
+              _hover={{ bg: "rawSienna" }}
+              cursor="pointer"
+            >
+              Login
+            </Button>
+            {/* </Link> */}
           </Stack>
         </Box>
       </Stack>
       <Box>
         New to us?{" "}
-        <Box as="span" color="rawSienna" onClick={signUp}>
+        <Box as="span" cursor="pointer" color="rawSienna" onClick={signUp}>
           Sign Up
         </Box>
       </Box>
