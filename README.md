@@ -48,6 +48,7 @@ Users should be able to:
 - [React Redux](https://react-redux.js.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
+- [Firebase](https://firebase.google.com/) - Authentication
 - Atomic Design Pattern
 - Mobie-first workflow
 
