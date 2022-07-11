@@ -20,6 +20,7 @@ const LogoutLink = (props: Props) => {
           _hover={{ color: "rawSienna" }}
           textTransform="uppercase"
           transition="color 0.2s linear"
+          cursor="pointer"
         >
           {user ? (
             <a
