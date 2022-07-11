@@ -1,4 +1,4 @@
-import { Stack, Box } from "@chakra-ui/react";
+import { Stack, Box, useToast } from "@chakra-ui/react";
 import Link from "next/link";
 import { useAuth } from "../../hooks/useAuth";
 import { useRouter } from "next/router";
@@ -6,16 +6,9 @@ import { useRouter } from "next/router";
 type Props = { base: string };
 
 const LogoutLink = (props: Props) => {
+  const toast = useToast();
   const { user, logout } = useAuth();
   const router = useRouter();
-  // const user = useSelector(selectUser);
-  // const dispatch = useDispatch();
-
-  // const logoutOfApp = () => {
-  //   dispatch(toggleNav());
-  //   dispatch(logout());
-  //   auth.signOut();
-  // };
 
   return (
     <Box as="nav" display={{ base: `${props.base}`, lg: "block" }}>
@@ -33,6 +26,13 @@ const LogoutLink = (props: Props) => {
               onClick={() => {
                 logout();
                 router.push("/login");
+                toast({
+                  title: "You have successfully logged out!",
+                  status: "success",
+                  duration: 4500,
+                  position: "top-left",
+                  isClosable: true,
+                });
               }}
             >
               Logout

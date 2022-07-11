@@ -1,15 +1,15 @@
 import React from "react";
 import NextHead from "../components/atoms/NextHead";
-import Login from "../components/organisms/users/Login";
+import SignUp from "../components/molecules/SignUp";
 
 const LoginPage = (): JSX.Element => {
   return (
     <>
       <NextHead
-        title="Login"
-        metaDescription="login to your account to track orders"
+        title="Sign Up"
+        metaDescription="New to Audiophile? Sign Up and begin shopping!"
       />
-      <Login />
+      <SignUp />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   Flex,
   Heading,
@@ -10,30 +10,56 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import InputField from "../../molecules/InputField";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useAuth } from "../../../hooks/useAuth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-interface LoginInputs {
-  emailAddress: string;
+interface LoginProps {
+  email: string;
   password: string;
 }
 
 const Login = () => {
+  const toast = useToast();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginInputs>();
+  } = useForm<LoginProps>({ mode: "onChange" });
 
-  const { user } = useAuth();
-  console.log(user);
+  const router = useRouter();
+
+  const { user, login } = useAuth();
+
   const [data, setData] = useState({ email: "", password: "" });
-  // const user = useSelector(selectUser);
 
   const handleLogin = async (e: any) => {
-    e.preventDefault();
+    // e.preventDefault();
+    // console.log(user);
+
+    try {
+      await login(data.email, data.password);
+      router.push("/");
+
+      toast({
+        title: "You have successfully logged in!",
+        status: "success",
+        duration: 4500,
+        position: "top-left",
+        isClosable: true,
+      });
+    } catch (err) {
+      toast({
+        title: "Your email or password was incorrect, please try again",
+        status: "error",
+        duration: 4500,
+        position: "top-left",
+        isClosable: true,
+      });
+      console.log(err);
+    }
   };
 
   return (
@@ -67,75 +93,60 @@ const Login = () => {
               p="1rem"
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
-              // onSubmit={handleSubmit(onSubmit)}
+              onSubmit={(e) => handleSubmit(handleLogin)(e)}
             >
-              {/* <FormControl>
-                <InputField
-                  label="Name"
-                  type="text"
-                  placeholder="Enter your name"
-                  errors={errors.name}
-                  {...register("name", {
-                    required: "Field cannot be empty",
-                  })}
-                  aria-invalid={errors.name ? "true" : "false"}
-                />
-              </FormControl> */}
               <FormControl>
                 <InputField
-                  label="Email Address"
                   type="email"
-                  placeholder="nembhardjl@outlook.com"
-                  errors={errors.emailAddress}
-                  {...register("emailAddress", {
+                  placeholder="Enter email"
+                  value={data.email}
+                  errors={errors.email}
+                  {...register("email", {
+                    onChange: (e: any) =>
+                      setData({ ...data, email: e.target.value }),
                     required: "Field cannot be empty",
                     pattern: {
                       value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
                       message: "Please enter a valid email",
                     },
                   })}
-                  aria-invalid={errors.emailAddress ? "true" : "false"}
+                  aria-invalid={errors.email ? "true" : "false"}
                 />
               </FormControl>
               <FormControl>
                 <InputField
-                  label="Password"
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
+                  value={data.password}
                   errors={errors.password}
                   {...register("password", {
+                    onChange: (e: any) =>
+                      setData({ ...data, password: e.target.value }),
                     required: "Field cannot be empty",
                   })}
                   aria-invalid={errors.password ? "true" : "false"}
                 />
               </FormControl>
-              {/* <Link href={user && "/"} passHref> */}
               <Button
-                as="a"
                 type="submit"
                 variant="solid"
                 color="white"
                 bg="onyx"
                 _hover={{ bg: "rawSienna" }}
                 cursor="pointer"
-                // onClick={() => setLogin(true)}
               >
                 Login
               </Button>
-              {/* </Link> */}
             </Stack>
           </Box>
         </Stack>
         <Box>
           New to Audiophile?{" "}
-          <Box
-            as="span"
-            cursor="pointer"
-            color="rawSienna"
-            // onClick={() => setLogin(false)}
-          >
-            Sign Up
-          </Box>
+          <Link href="/signup">
+            <Box as="a" cursor="pointer" color="rawSienna">
+              Sign Up
+            </Box>
+          </Link>
         </Box>
       </Flex>
     </>
