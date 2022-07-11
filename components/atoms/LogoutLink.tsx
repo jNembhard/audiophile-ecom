@@ -2,6 +2,8 @@ import { Stack, Box, useToast } from "@chakra-ui/react";
 import Link from "next/link";
 import { useAuth } from "../../hooks/useAuth";
 import { useRouter } from "next/router";
+import { isMenuOpen, toggleNav } from "../../store/menuSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 type Props = { base: string };
 
@@ -9,6 +11,15 @@ const LogoutLink = (props: Props) => {
   const toast = useToast();
   const { user, logout } = useAuth();
   const router = useRouter();
+
+  const menuOpen = useSelector(isMenuOpen);
+  const dispatch = useDispatch();
+
+  const menuClose = () => {
+    if (menuOpen == true) {
+      dispatch(toggleNav());
+    }
+  };
 
   return (
     <Box as="nav" display={{ base: `${props.base}`, lg: "block" }}>
@@ -27,6 +38,7 @@ const LogoutLink = (props: Props) => {
               onClick={() => {
                 logout();
                 router.push("/login");
+                menuClose();
                 toast({
                   title: "You have successfully logged out!",
                   status: "success",
@@ -40,7 +52,7 @@ const LogoutLink = (props: Props) => {
             </a>
           ) : (
             <Link href="/login" passHref>
-              <a>Sign In</a>
+              <a onClick={menuClose}>Sign In</a>
             </Link>
           )}
         </Box>
