@@ -1,12 +1,16 @@
+import { useState } from "react";
 import { Stack, Box } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectUser } from "../../store/userSlice";
 import { auth } from "../../firebase";
 import Link from "next/link";
 import { toggleNav } from "../../store/menuSlice";
+import useAuth from "../../hooks/useAuth";
+
 type Props = { base: string };
 
 const LogoutLink = (props: Props) => {
+  // const { user } = useAuth();
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 

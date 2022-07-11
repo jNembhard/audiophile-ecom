@@ -9,18 +9,21 @@ import CartContextProvider from "../store/CartContextProvider";
 import CartModal from "../components/organisms/CartModal";
 import FocusPortal from "../components/atoms/FocusPortal";
 import CheckoutModal from "../components/organisms/CheckoutModal";
+import { AuthContextProvider } from "../hooks/useAuth";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme} resetCSS>
       <Provider store={store}>
         <CartContextProvider>
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-          <CartModal />
-          <FocusPortal />
-          <CheckoutModal />
+          <AuthContextProvider>
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+            <CartModal />
+            <FocusPortal />
+            <CheckoutModal />
+          </AuthContextProvider>
         </CartContextProvider>
       </Provider>
     </ChakraProvider>

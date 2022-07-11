@@ -8,16 +8,16 @@ import {
   Avatar,
   FormControl,
   useToast,
-  Input,
 } from "@chakra-ui/react";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import Legend from "../atoms/Legend";
 import InputField from "../molecules/InputField";
-import {
-  auth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "../../firebase";
+import { auth } from "../../firebase";
+
 import { useDispatch } from "react-redux";
 import { login } from "../../store/userSlice";
 import { useForm } from "react-hook-form";
@@ -35,11 +35,9 @@ const LoginForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
   const toast = useToast();
-
-  const handleShowClick = () => setShowPassword(!showPassword);
 
   const appLogin = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -55,7 +53,15 @@ const LoginForm = () => {
         );
       })
       .catch((err) => {
-        alert(err);
+        if (err) {
+          toast({
+            title: "Uh Oh! Something went wrong",
+            status: "error",
+            duration: 4500,
+            position: "top-left",
+            isClosable: true,
+          });
+        }
       });
   };
 
@@ -72,17 +78,19 @@ const LoginForm = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
-        updateProfile(userAuth.user, { displayName: name }).then(
-          (userAuth: any) => {
+        updateProfile(userAuth.user, { displayName: name })
+          .then((userAuth: any) => {
             dispatch(
               login({
-                uid: userAuth.user.uid,
                 email: userAuth.user.email,
+                uid: userAuth.uid,
                 displayName: name,
               })
             );
-          }
-        );
+          })
+          .catch((error) => {
+            console.log("User account update has failed");
+          });
       })
       .catch((err) => {
         toast({
@@ -129,33 +137,46 @@ const LoginForm = () => {
             onSubmit={appLogin}
           >
             <FormControl>
-              <Input
+              <InputField
+                label="Name"
                 type="text"
-                placeholder="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                _placeholder={{ color: "lightGrey" }}
+                placeholder="Enter your name"
+                errors={errors.name}
+                {...register("name", {
+                  required: "Field cannot be empty",
+                })}
+                aria-invalid={errors.name ? "true" : "false"}
               />
             </FormControl>
             <FormControl>
-              <Input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="nembhardjl@outlook.com"
+              <InputField
+                label="Email Address"
                 type="email"
-                _placeholder={{ color: "lightGrey" }}
+                placeholder="nembhardjl@outlook.com"
+                errors={errors.emailAddress}
+                {...register("emailAddress", {
+                  required: "Field cannot be empty",
+                  pattern: {
+                    value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
+                    message: "Please enter a valid email",
+                  },
+                })}
+                aria-invalid={errors.emailAddress ? "true" : "false"}
               />
             </FormControl>
             <FormControl>
-              <Input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+              <InputField
+                label="Password"
                 type="password"
-                _placeholder={{ color: "lightGrey" }}
+                placeholder="password"
+                errors={errors.password}
+                {...register("password", {
+                  required: "Field cannot be empty",
+                })}
+                aria-invalid={errors.password ? "true" : "false"}
               />
             </FormControl>
-            {/* <Link href="/" passHref> */}
+            {/* <Link href={"/"} passHref> */}
             <Button
               // as="a"
               type="submit"

@@ -1,6 +1,7 @@
 import React from "react";
 import NextHead from "../components/atoms/NextHead";
-import LoginForm from "../components/molecules/LoginForm";
+import SignUp from "../components/molecules/SignUp";
+// import LoginForm from "../components/molecules/LoginForm";
 import Login from "../components/organisms/users/Login";
 
 const LoginPage = (): JSX.Element => {
@@ -10,7 +11,9 @@ const LoginPage = (): JSX.Element => {
         title="Login"
         metaDescription="login to your account to track orders"
       />
-      <LoginForm />
+      {/* <Login /> */}
+      <SignUp />
+      {/* <LoginForm /> */}
     </>
   );
 };
