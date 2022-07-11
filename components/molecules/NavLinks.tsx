@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 const NavLinks = () => {
   const { asPath } = useRouter();
+
   return (
     <Box as="nav" display={{ base: "none", lg: "block" }}>
       <HStack as="ul" display="flex" spacing={8} listStyleType="none">

@@ -12,15 +12,16 @@ import {
 import InputField from "../molecules/InputField";
 import { useAuth } from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
-type LoginProps = { name: string; emailAddress: string; password: string };
+type LoginProps = { name: string; email: string; password: string };
 
 const SignUp = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginProps>({ mode: "onBlur" });
+  } = useForm<LoginProps>({ mode: "onChange" });
 
   const { user, signUp } = useAuth();
   console.log(user);
@@ -28,7 +29,7 @@ const SignUp = () => {
   const [data, setData] = useState({ email: "", password: "" });
 
   const handleSignUp = async (e: any) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     try {
       await signUp(data.email, data.password);
@@ -68,7 +69,7 @@ const SignUp = () => {
             p="1rem"
             backgroundColor="whiteAlpha.900"
             boxShadow="md"
-            onSubmit={handleSignUp}
+            onSubmit={(e) => handleSubmit(handleSignUp)(e)}
           >
             {/* <FormControl>
           <InputField
@@ -83,34 +84,38 @@ const SignUp = () => {
           />
         </FormControl> */}
             <FormControl>
-              <Input
+              <InputField
                 type="email"
                 placeholder="Enter email"
-                required
-                onChange={(e: any) =>
-                  setData({
-                    ...data,
-                    email: e.target.value,
-                  })
-                }
                 value={data.email}
+                errors={errors.email}
+                {...register("email", {
+                  onChange: (e: any) =>
+                    setData({ ...data, email: e.target.value }),
+                  required: "Field cannot be empty",
+                  pattern: {
+                    value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
+                    message: "Please enter a valid email",
+                  },
+                })}
+                aria-invalid={errors.email ? "true" : "false"}
               />
             </FormControl>
             <FormControl>
-              <Input
+              <InputField
                 type="password"
                 placeholder="Password"
-                required
-                onChange={(e: any) =>
-                  setData({
-                    ...data,
-                    password: e.target.value,
-                  })
-                }
                 value={data.password}
+                errors={errors.password}
+                {...register("password", {
+                  onChange: (e: any) =>
+                    setData({ ...data, password: e.target.value }),
+                  required: "Field cannot be empty",
+                })}
+                aria-invalid={errors.password ? "true" : "false"}
               />
             </FormControl>
-            {/* <Link href={user && "/"} passHref> */}
+            {/* <Link href={user && { "/": string }} passHref> */}
             <Button
               type="submit"
               variant="solid"

@@ -1,24 +1,21 @@
-import { useState } from "react";
 import { Stack, Box } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { logout, selectUser } from "../../store/userSlice";
-import { auth } from "../../firebase";
 import Link from "next/link";
-import { toggleNav } from "../../store/menuSlice";
-import useAuth from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
+import { useRouter } from "next/router";
 
 type Props = { base: string };
 
 const LogoutLink = (props: Props) => {
-  // const { user } = useAuth();
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+  const { user, logout } = useAuth();
+  const router = useRouter();
+  // const user = useSelector(selectUser);
+  // const dispatch = useDispatch();
 
-  const logoutOfApp = () => {
-    dispatch(toggleNav());
-    dispatch(logout());
-    auth.signOut();
-  };
+  // const logoutOfApp = () => {
+  //   dispatch(toggleNav());
+  //   dispatch(logout());
+  //   auth.signOut();
+  // };
 
   return (
     <Box as="nav" display={{ base: `${props.base}`, lg: "block" }}>
@@ -31,9 +28,20 @@ const LogoutLink = (props: Props) => {
           textTransform="uppercase"
           transition="color 0.2s linear"
         >
-          <Link href={!user && "/login"} passHref>
-            <a onClick={logoutOfApp}>{user ? "Sign Out" : "Sign In"}</a>
-          </Link>
+          {user ? (
+            <a
+              onClick={() => {
+                logout();
+                router.push("/login");
+              }}
+            >
+              Logout
+            </a>
+          ) : (
+            <Link href="/login" passHref>
+              <a>Sign In</a>
+            </Link>
+          )}
         </Box>
       </Stack>
     </Box>
