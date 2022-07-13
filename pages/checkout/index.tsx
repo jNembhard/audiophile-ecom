@@ -1,8 +1,7 @@
-import Head from "next/head";
 import { Box } from "@chakra-ui/react";
 
-import CheckoutPageTemplate from "../../components/templates/CheckoutPageTemplate";
-import NextHead from "../../components/atoms/NextHead";
+import CheckoutPageTemplate from "@components/templates/CheckoutPageTemplate";
+import NextHead from "@components/atoms/NextHead";
 
 const CheckoutPage = (): JSX.Element => {
   return (

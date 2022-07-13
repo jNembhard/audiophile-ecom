@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { increaseQuantity, decreaseQuantity } from "../../store/CartSlice";
-import CartItemType from "../../interfaces/CartItem";
+import { increaseQuantity, decreaseQuantity } from "@store/CartSlice";
+import CartItemType from "@interfaces/CartItem";
 import { HStack, Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import ProductQuantity from "../atoms/ProductQuantity";
+import ProductQuantity from "@components/atoms/ProductQuantity";
 
 type Props = { item: CartItemType };
 

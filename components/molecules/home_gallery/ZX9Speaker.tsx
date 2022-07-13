@@ -1,6 +1,6 @@
 import { Stack, Image, Box, Heading, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import Motion from "../../organisms/Motion";
+import Motion from "@components/organisms/Motion";
 
 const ZX9Speaker = () => {
   return (

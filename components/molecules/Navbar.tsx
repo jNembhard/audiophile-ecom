@@ -1,6 +1,6 @@
 import { Container, Flex } from "@chakra-ui/react";
-import BurgerIcon from "../atoms/BurgerIcon";
-import Logo from "../atoms/Logo";
+import BurgerIcon from "@components/atoms/BurgerIcon";
+import Logo from "@components/atoms/Logo";
 import CartLogin from "./CartLogin";
 import NavLinks from "./NavLinks";
 

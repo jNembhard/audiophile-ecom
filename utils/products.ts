@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Product } from "../interfaces/Product";
+import { Product } from "@interfaces/Product";
 
 export const readProductData = (): Product[] => {
   const filePath = path.join(process.cwd(), "data", "products.json");

@@ -1,7 +1,7 @@
 import { IconButton } from "@chakra-ui/react";
 import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
-import { isMenuOpen, toggleNav } from "../../store/menuSlice";
+import { isMenuOpen, toggleNav } from "@store/menuSlice";
 
 const BurgerIcon = () => {
   const menuOpen = useSelector(isMenuOpen);

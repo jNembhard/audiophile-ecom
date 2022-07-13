@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/react";
-import GoBackLink from "../atoms/GoBackLink";
-import Form from "../organisms/Form";
+import GoBackLink from "@components/atoms/GoBackLink";
+import Form from "@components/organisms/Form";
 
 const CheckoutPageTemplate = () => {
   return (

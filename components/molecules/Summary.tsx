@@ -8,11 +8,11 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
-import { cartItems } from "../../store/CartSlice";
+import { cartItems } from "@store/CartSlice";
 import { useSelector } from "react-redux";
-import useCartTotals from "../../hooks/useCartTotals";
+import useCartTotals from "@hooks/useCartTotals";
 import LineSummary from "./LineSummary";
-import { SHIPPING_FEE } from "../../variables/rates";
+import { SHIPPING_FEE } from "@variables/rates";
 
 const Summary = ({
   isDisabled,

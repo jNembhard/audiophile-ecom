@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store/index";
+import { RootState } from "@store/index";
 
 const userSlice = createSlice({
   name: "user",

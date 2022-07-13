@@ -1,5 +1,5 @@
 import { HStack, IconButton } from "@chakra-ui/react";
-import { sociallinks } from "../../utils/socialLinks";
+import { sociallinks } from "@utils/socialLinks";
 
 const Socials = () => {
   return (

@@ -1,6 +1,6 @@
 import { HStack } from "@chakra-ui/react";
-import CartIcon from "../atoms/CartIcon";
-import LogoutLink from "../atoms/LogoutLink";
+import CartIcon from "@components/atoms/CartIcon";
+import LogoutLink from "@components/atoms/LogoutLink";
 
 const CartLogin = () => {
   return (

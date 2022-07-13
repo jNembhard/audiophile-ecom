@@ -1,8 +1,8 @@
-import HeroBanner from "../organisms/HeroBanner";
+import HeroBanner from "@components/organisms/HeroBanner";
 import { Container } from "@chakra-ui/react";
-import ProductLinks from "../organisms/ProductLinks";
-import HomeProductGallery from "../organisms/HomeProductGallery";
-import MotionAudioGear from "../organisms/MotionAudioGear";
+import ProductLinks from "@components/organisms/ProductLinks";
+import HomeProductGallery from "@components/organisms/HomeProductGallery";
+import MotionAudioGear from "@components/organisms/MotionAudioGear";
 
 const HomePage = () => {
   return (

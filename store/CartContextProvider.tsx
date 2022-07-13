@@ -1,5 +1,5 @@
 import { useDisclosure } from "@chakra-ui/react";
-import { createContext, useContext, useEffect, PropsWithChildren } from "react";
+import { createContext, useContext, useEffect } from "react";
 
 type ContextProps = {
   isCartModalOpen: boolean;

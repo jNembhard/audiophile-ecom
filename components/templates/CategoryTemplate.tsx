@@ -2,12 +2,11 @@ import { Box, Heading, Container } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Product } from "../../interfaces/Product";
-import { closeNav } from "../../store/menuSlice";
-import ProductLinks from "../organisms/ProductLinks";
-import ProductList from "../organisms/ProductList";
-import MotionAudioGear from "../organisms/MotionAudioGear";
-import Motion from "../organisms/Motion";
+import { Product } from "@interfaces/Product";
+import { closeNav } from "@store/menuSlice";
+import ProductLinks from "@components/organisms/ProductLinks";
+import ProductList from "@components/organisms/ProductList";
+import MotionAudioGear from "@components/organisms/MotionAudioGear";
 
 type Props = { products: Product[] };
 

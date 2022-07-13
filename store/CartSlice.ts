@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./index";
-import CartItem from "../interfaces/CartItem";
-import { loadCart } from "../utils/localStorage";
+import CartItem from "@interfaces/CartItem";
+import { loadCart } from "@utils/localStorage";
 
 export type CartSlice = {
   items: CartItem[];

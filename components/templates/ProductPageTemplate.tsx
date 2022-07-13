@@ -1,7 +1,7 @@
-import { Product } from "../../interfaces/Product";
+import { Product } from "@interfaces/Product";
 import { Container } from "@chakra-ui/react";
-import ProductDetails from "../organisms/ProductDetails";
-import GoBackLink from "../atoms/GoBackLink";
+import ProductDetails from "@components/organisms/ProductDetails";
+import GoBackLink from "@components/atoms/GoBackLink";
 
 type Props = { product: Product };
 

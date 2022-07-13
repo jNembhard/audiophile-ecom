@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { totalAmount } from "../store/CartSlice";
-import { SHIPPING_FEE, TAX_RATE } from "../variables/rates";
+import { totalAmount } from "@store/CartSlice";
+import { SHIPPING_FEE, TAX_RATE } from "@variables/rates";
 
 const useCartTotals = (): {
   cartTotal: number;

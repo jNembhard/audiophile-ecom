@@ -1,7 +1,7 @@
 import { Box, Container, Stack, SimpleGrid, Text } from "@chakra-ui/react";
-import Logo from "../atoms/Logo";
-import FooterLinks from "../molecules/FooterLinks";
-import Socials from "../molecules/Socials";
+import Logo from "@components/atoms/Logo";
+import FooterLinks from "@components/molecules/FooterLinks";
+import Socials from "@components/molecules/Socials";
 
 const Footer = () => {
   let date = new Date().getFullYear();

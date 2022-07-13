@@ -1,5 +1,5 @@
 import { Stack, Box } from "@chakra-ui/react";
-import { navlinks } from "../../utils/navLinks";
+import { navlinks } from "@utils/navLinks";
 import Link from "next/link";
 
 const FooterLinks = () => {

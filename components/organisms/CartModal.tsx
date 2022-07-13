@@ -19,7 +19,7 @@ import {
   List,
   Text,
 } from "@chakra-ui/react";
-import CartItem from "../molecules/CartItem";
+import CartItem from "@components/molecules/CartItem";
 
 const CartModal = () => {
   const items = useSelector(cartItems);

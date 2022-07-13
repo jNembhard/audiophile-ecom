@@ -1,6 +1,6 @@
 import React from "react";
-import NextHead from "../components/atoms/NextHead";
-import Login from "../components/organisms/users/Login";
+import NextHead from "@components/atoms/NextHead";
+import Login from "@components/organisms/users/Login";
 
 const LoginPage = (): JSX.Element => {
   return (

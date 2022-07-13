@@ -1,4 +1,4 @@
-import AudioGear from "../molecules/AudioGear";
+import AudioGear from "@components/molecules/AudioGear";
 import Motion from "./Motion";
 
 const MotionAudioGear = () => {

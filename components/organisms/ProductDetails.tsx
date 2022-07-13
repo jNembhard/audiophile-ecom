@@ -1,8 +1,8 @@
 import { Stack, Box, Image } from "@chakra-ui/react";
-import { Product } from "../../interfaces/Product";
-import ProductDescription from "../molecules/ProductDescription";
-import ProductFeatures from "../molecules/ProductFeatures";
-import ProductGallery from "../molecules/ProductGallery";
+import { Product } from "@interfaces/Product";
+import ProductDescription from "@components/molecules/ProductDescription";
+import ProductFeatures from "@components/molecules/ProductFeatures";
+import ProductGallery from "@components/molecules/ProductGallery";
 import Motion from "./Motion";
 import MotionAudioGear from "./MotionAudioGear";
 import ProductLinks from "./ProductLinks";

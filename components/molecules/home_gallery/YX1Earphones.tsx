@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Image, Heading, Button, SimpleGrid } from "@chakra-ui/react";
 import Link from "next/link";
-import Motion from "../../organisms/Motion";
+import Motion from "@components/organisms/Motion";
 
 const YX1Earphones = () => {
   return (

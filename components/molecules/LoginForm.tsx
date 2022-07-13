@@ -14,14 +14,12 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import Legend from "../atoms/Legend";
-import InputField from "../molecules/InputField";
+import InputField from "@components/molecules/InputField";
 import { auth } from "../../firebase";
 
 import { useDispatch } from "react-redux";
-import { login } from "../../store/userSlice";
+import { login } from "@store/userSlice";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
 
 type LoginProps = { name: string; emailAddress: string; password: string };
 

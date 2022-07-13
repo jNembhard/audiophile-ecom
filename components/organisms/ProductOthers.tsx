@@ -1,6 +1,5 @@
 import { Box, Heading, Stack } from "@chakra-ui/react";
-import OtherProductLink from "../molecules/OtherProductLink";
-import { useInView } from "react-intersection-observer";
+import OtherProductLink from "@components/molecules/OtherProductLink";
 import Motion from "./Motion";
 
 export type OtherProductProps = {

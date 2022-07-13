@@ -12,10 +12,10 @@ import {
   useBoolean,
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart, cartItems } from "../../store/CartSlice";
-import { useCartModal } from "../../store/CartContextProvider";
-import useCartTotals from "../../hooks/useCartTotals";
-import ItemSummary from "../molecules/ItemSummary";
+import { clearCart, cartItems } from "@store/CartSlice";
+import { useCartModal } from "@store/CartContextProvider";
+import useCartTotals from "@hooks/useCartTotals";
+import ItemSummary from "@components/molecules/ItemSummary";
 import Link from "next/link";
 
 const CheckoutModal = () => {

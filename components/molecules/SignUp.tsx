@@ -9,8 +9,8 @@ import {
   Flex,
   useToast,
 } from "@chakra-ui/react";
-import InputField from "../molecules/InputField";
-import { useAuth } from "../../hooks/useAuth";
+import InputField from "@components/molecules/InputField";
+import { useAuth } from "@hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useRouter } from "next/router";

@@ -1,8 +1,8 @@
 import { Stack, Box, useToast } from "@chakra-ui/react";
 import Link from "next/link";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "@hooks/useAuth";
 import { useRouter } from "next/router";
-import { isMenuOpen, toggleNav } from "../../store/menuSlice";
+import { isMenuOpen, toggleNav } from "@store/menuSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 type Props = { base: string };

@@ -1,5 +1,5 @@
 import { Box, Image, SimpleGrid } from "@chakra-ui/react";
-import { CategoryImage } from "../../interfaces/Product";
+import { CategoryImage } from "@interfaces/Product";
 
 type Props = {
   first?: CategoryImage | undefined;

@@ -1,7 +1,7 @@
 import { VStack } from "@chakra-ui/react";
-import YX1Earphones from "../molecules/home_gallery/YX1Earphones";
-import ZX7Speaker from "../molecules/home_gallery/ZX7Speaker";
-import ZX9Speaker from "../molecules/home_gallery/ZX9Speaker";
+import YX1Earphones from "@components/molecules/home_gallery/YX1Earphones";
+import ZX7Speaker from "@components/molecules/home_gallery/ZX7Speaker";
+import ZX9Speaker from "@components/molecules/home_gallery/ZX9Speaker";
 
 const HomeProductGallery = () => {
   return (

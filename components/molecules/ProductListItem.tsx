@@ -1,4 +1,4 @@
-import { Product } from "../../interfaces/Product";
+import { Product } from "@interfaces/Product";
 import { Stack, Box, Image, Heading, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 

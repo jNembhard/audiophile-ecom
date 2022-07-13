@@ -1,5 +1,5 @@
 import { Box, HStack, Image, Text } from "@chakra-ui/react";
-import CartItem from "../../interfaces/CartItem";
+import CartItem from "@interfaces/CartItem";
 
 type Props = { item: CartItem };
 

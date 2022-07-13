@@ -1,8 +1,8 @@
 import { Button, Center } from "@chakra-ui/react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
-import { useCartModal } from "../../store/CartContextProvider";
-import { totalQuantity } from "../../store/CartSlice";
+import { useCartModal } from "@store/CartContextProvider";
+import { totalQuantity } from "@store/CartSlice";
 
 const CartIcon = () => {
   const { onCartModalOpen } = useCartModal();

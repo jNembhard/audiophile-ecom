@@ -1,6 +1,6 @@
 import { Box, Image, Heading, Button } from "@chakra-ui/react";
 import Link from "next/link";
-import Motion from "../../organisms/Motion";
+import Motion from "@components/organisms/Motion";
 
 const ZX7Speaker = () => {
   return (
