@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Audiophile](https://audiophiles.vercel.app)
+- Live Site URL: [Audiophile](https://audiophilemusic.vercel.app)
 
 ## My process
 
