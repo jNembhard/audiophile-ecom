@@ -70,7 +70,7 @@ const HeroBanner = () => {
           color="lightGrey"
           fontSize="0.9375rem"
           lineHeight="1.7"
-          maxWidth="38ch"
+          maxWidth={{ base: "38ch", md: "40ch", lg: "42ch" }}
           mx={{ base: "auto", lg: 0 }}
           mb={10}
           initial={{ opacity: 0 }}
