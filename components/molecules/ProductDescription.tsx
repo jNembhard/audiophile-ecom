@@ -38,6 +38,7 @@ const ProductDescription = ({ product }: { product: Product }): JSX.Element => {
     if (quantity <= 1) return;
     setQuantity((state) => state - 1);
   };
+
   return (
     <Box textAlign={{ base: "left" }} flexBasis={{ sm: "60%", lg: "50%" }}>
       <Heading

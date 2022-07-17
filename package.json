@@ -17,6 +17,7 @@
     "firebase": "^9.9.0",
     "framer-motion": "^6.3.16",
     "fs": "^0.0.1-security",
+    "moment": "^2.29.4",
     "next": "12.2.0",
     "path": "^0.12.7",
     "querystring": "^0.2.1",

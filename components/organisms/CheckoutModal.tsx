@@ -17,8 +17,13 @@ import { useCartModal } from "@store/CartContextProvider";
 import useCartTotals from "@hooks/useCartTotals";
 import ItemSummary from "@components/molecules/ItemSummary";
 import Link from "next/link";
+import { useAuth } from "@hooks/useAuth";
+import { db } from "../../firebase";
+import { addDoc, collection, serverTimestamp, doc } from "firebase/firestore";
 
 const CheckoutModal = () => {
+  const { user } = useAuth();
+
   const items = useSelector(cartItems);
   const { grandTotal } = useCartTotals();
 
@@ -26,8 +31,16 @@ const CheckoutModal = () => {
   const [showMore, setShowMore] = useBoolean(false);
   const { isCheckoutModalOpen, onCheckoutModalClose } = useCartModal();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     onCheckoutModalClose();
+    const docRef = doc(db, "users", user?.uid);
+    const collectionRef = collection(docRef, "orders");
+    const orderRef = await addDoc(collectionRef, {
+      ...items,
+      timestamp: serverTimestamp(),
+    });
+    console.log(`${orderRef} added successfully!`);
+
     dispatch(clearCart());
   };
 

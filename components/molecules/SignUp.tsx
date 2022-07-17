@@ -14,6 +14,8 @@ import { useAuth } from "@hooks/useAuth";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { db } from "../../firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 type SignUpProps = { name: string; email: string; password: string };
 
@@ -29,13 +31,19 @@ const SignUp = () => {
   const router = useRouter();
 
   const { user, signUp } = useAuth();
-
   const [data, setData] = useState({ email: "", password: "" });
 
   const handleSignUp = async (e: any) => {
     // e.preventDefault();
 
     try {
+      const collectionRef = collection(db, "users");
+      const docRef = await addDoc(collectionRef, {
+        ...data,
+        timestamp: serverTimestamp(),
+      });
+      console.log(`${docRef} added successfully!`);
+
       await signUp(data.email, data.password);
       router.push("/");
 

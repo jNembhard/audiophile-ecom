@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "@hooks/useAuth";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import userSlice from "@store/userSlice";
 
 interface LoginProps {
   email: string;
