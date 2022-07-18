@@ -20,10 +20,11 @@ const Orders = () => {
   const [orders, setOrders]: any[] = useState([]);
   const [time, setTime]: any[] = useState({ date: [], time: [] });
   const { user } = useAuth();
-  const userDoc = doc(db, `users/${user?.uid}/orders`, user?.email);
 
   const readOrderData = async () => {
     try {
+      const userDoc = doc(db, `users/${user.uid}/orders`, user?.email);
+
       await getDoc(userDoc).then((doc) => {
         if (doc.exists()) {
           setOrders(doc.data().basket.products);
