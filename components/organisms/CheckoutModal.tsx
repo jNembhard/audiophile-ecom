@@ -57,7 +57,7 @@ const CheckoutModal = () => {
 
     queryData.map(async () => {
       await setDoc(docRef, {
-        products: [...items],
+        basket: { products: [...items] },
         timestamp: serverTimestamp(),
       });
     });
@@ -79,7 +79,10 @@ const CheckoutModal = () => {
       }));
       console.log(queryData);
       queryData.map(async () => {
-        await setDoc(docRef, { ...items, timestamp: serverTimestamp() });
+        await setDoc(docRef, {
+          basket: { products: [...items] },
+          timestamp: serverTimestamp(),
+        });
       });
     }
 

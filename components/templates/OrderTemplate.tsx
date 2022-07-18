@@ -2,9 +2,7 @@ import React from "react";
 import { Box, Heading, Container } from "@chakra-ui/react";
 import Orders from "@components/organisms/Orders";
 
-type Props = {};
-
-const OrderTemplate = (props: Props) => {
+const OrderTemplate = () => {
   return (
     <Box as="main" id="main">
       <Heading

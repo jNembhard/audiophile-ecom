@@ -1,3 +1,7 @@
+export interface Basket {
+  product: CartItem;
+}
+
 interface CartItem {
   id: number;
   shortName: string;

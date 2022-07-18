@@ -28,28 +28,42 @@ const LogoutLink = (props: Props) => {
           fontSize="sm"
           fontWeight="bold"
           color={{ base: "black", lg: "white" }}
-          _hover={{ color: "rawSienna" }}
           textTransform="uppercase"
-          transition="color 0.2s linear"
           cursor="pointer"
         >
           {user ? (
-            <a
-              onClick={() => {
-                logout();
-                router.push("/login");
-                menuClose();
-                toast({
-                  title: "You have successfully logged out!",
-                  status: "success",
-                  duration: 4500,
-                  position: "top-left",
-                  isClosable: true,
-                });
-              }}
-            >
-              Logout
-            </a>
+            <>
+              <Box
+                as="a"
+                _hover={{ color: "rawSienna" }}
+                transition="color 0.2s linear"
+                onClick={() => {
+                  logout();
+                  router.push("/login");
+                  menuClose();
+                  toast({
+                    title: "You have successfully logged out!",
+                    status: "success",
+                    duration: 4500,
+                    position: "top-left",
+                    isClosable: true,
+                  });
+                }}
+              >
+                Logout
+              </Box>
+              &nbsp;&nbsp;&nbsp;
+              <Link href="/orders" passHref>
+                <Box
+                  as="a"
+                  _hover={{ color: "rawSienna" }}
+                  transition="color 0.2s linear"
+                  onClick={menuClose}
+                >
+                  orders
+                </Box>
+              </Link>
+            </>
           ) : (
             <Link href="/login" passHref>
               <a onClick={menuClose}>Sign In</a>

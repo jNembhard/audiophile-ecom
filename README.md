@@ -48,7 +48,7 @@ Users should be able to:
 - [React Redux](https://react-redux.js.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Hook Form](https://react-hook-form.com/)
-- [Firebase](https://firebase.google.com/) - Authentication
+- [Firebase](https://firebase.google.com/) - Authentication and Database storage
 - Atomic Design Pattern
 - Mobie-first workflow
 
@@ -145,10 +145,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 `getStaticPaths` is used to handle the dynamic routing portion. This defines a list of paths that will statically be statically pre-rendered. This function runs only during build in production and must be used alongside `getStaticProps`
 
 So overall, what does this mean? `getStaticProps` pulls in data that needs to be passed for the routes to be hydrated properly; This is a process for importing data into an object and then serving the content through `getStaticPaths`.
-
-### Continued development
-
-A major goal with this project is to create a Full Stack application and connecting this store to Stripe.
 
 ## Author
 
