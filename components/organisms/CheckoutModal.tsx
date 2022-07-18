@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -19,7 +20,15 @@ import ItemSummary from "@components/molecules/ItemSummary";
 import Link from "next/link";
 import { useAuth } from "@hooks/useAuth";
 import { db } from "../../firebase";
-import { addDoc, collection, serverTimestamp, doc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  query,
+  setDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 const CheckoutModal = () => {
   const { user } = useAuth();
@@ -28,24 +37,52 @@ const CheckoutModal = () => {
   const { grandTotal } = useCartTotals();
 
   const dispatch = useDispatch();
+  const [products, setProducts] = useState([]);
+
   const [showMore, setShowMore] = useBoolean(false);
   const { isCheckoutModalOpen, onCheckoutModalClose } = useCartModal();
 
   const handleClick = async () => {
     onCheckoutModalClose();
-    const docRef = doc(db, "users", user?.uid);
-    const collectionRef = collection(docRef, "orders");
-    const orderRef = await addDoc(collectionRef, {
+    const docRef = doc(db, `users/${user.uid}/orders`, user.email);
+    console.log(user);
+    const userQuery = query(collection(db, "users"));
+
+    const querySnapshot = await getDocs(userQuery);
+    const queryData = querySnapshot.docs.map((items) => ({
       ...items,
+      email: user.email,
       timestamp: serverTimestamp(),
+    }));
+
+    queryData.map(async () => {
+      await setDoc(docRef, {
+        products: [...items],
+        timestamp: serverTimestamp(),
+      });
     });
-    console.log(`${orderRef} added successfully!`);
 
     dispatch(clearCart());
   };
 
-  const onModalClose = () => {
+  const onModalClose = async () => {
     onCheckoutModalClose();
+    if (user) {
+      const docRef = doc(db, `users/${user.email}/orders`, user?.uid);
+      console.log(user);
+      const userQuery = query(collection(db, "users"));
+
+      const querySnapshot = await getDocs(userQuery);
+      const queryData = querySnapshot.docs.map((items) => ({
+        ...items,
+        timestamp: serverTimestamp(),
+      }));
+      console.log(queryData);
+      queryData.map(async () => {
+        await setDoc(docRef, { ...items, timestamp: serverTimestamp() });
+      });
+    }
+
     dispatch(clearCart());
   };
 

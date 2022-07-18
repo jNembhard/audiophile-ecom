@@ -65,9 +65,9 @@ Chakra UI functions as a CSS-In-JS solution. Imagine building blocks comprised o
 base: "center", sm: "left" }} >
 ```
 
-Chakra uses a design pattern with a mobile-first workflow in mind. If you look at textAlign, you can design starting at the base to sm (mobile) sm to md (tablet) md to lg (desktop). The styling breakpoint move up in increments starting from 0em to 30em.
+Chakra uses a design pattern with a mobile-first workflow in mind. If you look at textAlign, you can design starting at the base to sm (mobile) sm to md (tablet) md to lg (desktop). The styling breakpoint strarts at 0em and moves up in increments of 30em.
 
-The "as" prop functions as a way to change components to whatever html you need to use. "div" will always be the default value.
+The "as" prop functions as a way to change components to a preferred html tag. "div" will always be the default value.
 
 Chakra also provides its own custom hooks like the one you see below:
 
@@ -86,7 +86,7 @@ const emptyCart = () => {
 };
 ```
 
-`useToast()` allows you to feedback to users when an action is performed. In this case, an alert would be sent to users when their cart is successfully cleared.
+`useToast()` allows you to give feedback to users when an action is performed. In this case, an alert would be sent to users when their cart is successfully cleared.
 
 #### Redux Toolkit
 
@@ -115,7 +115,7 @@ const menuSlice = createSlice({
 });
 ```
 
-Here, the slices act as a series of logic and actions to be peformed when the reducer is called. For instance, when click the hamburger menu icon, the initial state of the menu is closed and on each click, you can toggle the menu betwen open and closed states.
+Here, the slices act as a series of logic and actions to be peformed when the reducer is called. For instance, when you click the hamburger menu icon, the initial state of the menu is closed and on each click, you can toggle the menu betwen open and closed states.
 
 Redux toolkit also allows you to create reducer logic in a mutable way. Think incrementing the number of items you add to a cart like, clicking a button to increase the number of headphones present in your cart.
 
@@ -142,9 +142,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 `getStaticProps` is used to render the page at build time before a user makes a request. This also has the added affect of improving SEO. `getStaticProps` generates `HTML` and `JSON` files and then serves that content to users.
 
-`getStaticPaths` is used to handle the dynamic routing portion. This defines a list of path that will statically pre-render all specified paths. This function runs only during build in production and must be used alongside `getStaticProps`
+`getStaticPaths` is used to handle the dynamic routing portion. This defines a list of paths that will statically be statically pre-rendered. This function runs only during build in production and must be used alongside `getStaticProps`
 
-So overall, what does this mean? `getStaticProps` pull in the data that needs to be passed for the routes to be hydrated properly; This is a process for importing data into an object and the serving the content through `getStaticPaths`.
+So overall, what does this mean? `getStaticProps` pulls in data that needs to be passed for the routes to be hydrated properly; This is a process for importing data into an object and then serving the content through `getStaticPaths`.
 
 ### Continued development
 

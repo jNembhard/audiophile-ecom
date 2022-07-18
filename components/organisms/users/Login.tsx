@@ -45,7 +45,7 @@ const Login = () => {
       router.push("/");
 
       toast({
-        title: "You have successfully logged in!",
+        title: `Welcome back ${data.email}!`,
         status: "success",
         duration: 4500,
         position: "top-left",

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -10,17 +10,48 @@ import {
   Heading,
   List,
 } from "@chakra-ui/react";
-import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import { clearCart, cartItems } from "@store/CartSlice";
-import useCartTotals from "@hooks/useCartTotals";
+import { useSelector } from "react-redux";
+import { cartItems } from "@store/CartSlice";
 import ItemSummary from "@components/molecules/ItemSummary";
 import { db } from "../../firebase";
+import {
+  getDocs,
+  onSnapshot,
+  collection,
+  orderBy,
+  setDoc,
+  query,
+  doc,
+  getDoc,
+} from "firebase/firestore";
+import { useAuth } from "@hooks/useAuth";
 
-type Props = {};
-
-const Orders = (props: Props) => {
+const Orders = () => {
+  const [orders, setOrders]: any[] = useState([]);
   const items = useSelector(cartItems);
+  const { user } = useAuth();
+  const userDoc = doc(db, `users/${user.uid}/orders`, user?.email);
+
+  const readOrderData = async () => {
+    try {
+      await getDoc(userDoc).then((doc) => {
+        if (doc.exists()) {
+          console.log(doc.data().products[0].id);
+          console.log(JSON.stringify(doc.data().products));
+          setOrders(doc.data().products);
+        }
+      });
+
+      // alert("Data retrieved from firestore!");
+    } catch (error) {
+      console.log(error);
+      alert(error);
+    }
+  };
+
+  useEffect(() => {
+    readOrderData();
+  }, [user]);
 
   return (
     <Stack
@@ -30,7 +61,7 @@ const Orders = (props: Props) => {
       spacing={{ base: "2rem", lg: "7.75rem" }}
     >
       <Heading as="h2" textTransform="unset">
-        Previous Orders (1)
+        Previous Orders ({orders.length})
       </Heading>
       <Accordion defaultIndex={[0]} allowMultiple>
         <AccordionItem>
@@ -42,7 +73,7 @@ const Orders = (props: Props) => {
                 fontWeight="bold"
                 letterSpacing="0.094rem"
               >
-                Section 1 title
+                Orders
               </Heading>
             </Box>
             <Box flex="1" textAlign="right">
@@ -62,11 +93,11 @@ const Orders = (props: Props) => {
               as="ul"
               pt="1.5rem"
               px="1.5rem"
-              pb={items.length === 1 ? "1.5rem" : "0"}
+              pb={orders.length === 1 ? "1.5rem" : "0"}
               width="100%"
             >
-              {items.map((item) => (
-                <ItemSummary key={item.id} item={item} />
+              {orders?.map((order: any) => (
+                <ItemSummary key={order.id} item={order} />
               ))}
             </List>
           </AccordionPanel>
