@@ -24,7 +24,6 @@ const Orders = () => {
   const readOrderData = async () => {
     try {
       const userDoc = doc(db, `users/${user.uid}/orders`, user?.email);
-
       await getDoc(userDoc).then((doc) => {
         if (doc.exists()) {
           setOrders(doc.data().basket.products);

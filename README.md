@@ -65,7 +65,7 @@ Chakra UI functions as a CSS-In-JS solution. Imagine building blocks comprised o
 base: "center", sm: "left" }} >
 ```
 
-Chakra uses a design pattern with a mobile-first workflow in mind. If you look at textAlign, you can design starting at the base to sm (mobile) sm to md (tablet) md to lg (desktop). The styling breakpoint strarts at 0em and moves up in increments of 30em.
+Chakra uses a design pattern with a mobile-first workflow in mind. If you look at textAlign, you can design starting at the base to sm (mobile) sm to md (tablet) md to lg (desktop). The breakpoint styling starts at 30em and moves up in increments of 18em.
 
 The "as" prop functions as a way to change components to a preferred html tag. "div" will always be the default value.
 
