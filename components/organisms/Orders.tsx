@@ -83,7 +83,7 @@ const Orders = () => {
               >
                 {time.date}
                 <Show breakpoint="(min-width: 48rem)">
-                  &nbsp;at&nbsp;
+                  &nbsp;
                   <Box>{time.time}</Box>
                 </Show>
               </Heading>
