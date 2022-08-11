@@ -1,8 +1,8 @@
-import React from "react";
+import type { NextPage } from "next";
 import NextHead from "@components/atoms/NextHead";
 import SignUp from "@components/molecules/SignUp";
 
-const LoginPage = (): JSX.Element => {
+const LoginPage: NextPage = () => {
   return (
     <>
       <NextHead

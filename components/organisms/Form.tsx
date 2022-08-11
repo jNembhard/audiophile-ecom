@@ -163,7 +163,7 @@ const Form = () => {
             />
             <InputField
               label="City"
-              placeholder="California"
+              placeholder="Miami"
               errors={errors.city}
               {...register("city", {
                 required: "Field cannot be empty",
