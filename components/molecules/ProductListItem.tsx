@@ -1,6 +1,14 @@
 import { Product } from "@interfaces/Product";
-import { Stack, Box, Image, Heading, Text, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Stack,
+  Box,
+  Image,
+  Heading,
+  Text,
+  Link,
+  Button,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const ProductListItem: React.FC<Product> = ({
   slug,
@@ -72,11 +80,13 @@ const ProductListItem: React.FC<Product> = ({
         >
           {description}
         </Text>
-        <Link href={`/${category}/${slug}`} passHref>
-          <Button as="a" cursor="pointer">
-            See Product
-          </Button>
-        </Link>
+        <NextLink href={`/${category}/${slug}`} passHref>
+          <Link _hover={{ textDecoration: "none" }}>
+            <Button as="a" cursor="pointer">
+              See Product
+            </Button>
+          </Link>
+        </NextLink>
       </Box>
     </Stack>
   );

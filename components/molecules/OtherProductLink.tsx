@@ -1,5 +1,5 @@
-import { Box, Heading, Image, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Heading, Link, Image, Button } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { OtherProductProps } from "@components/organisms/ProductOthers";
 
 const OtherProductLink: React.FC<OtherProductProps> = ({
@@ -28,11 +28,13 @@ const OtherProductLink: React.FC<OtherProductProps> = ({
       >
         {name}
       </Heading>
-      <Link href={`/${slug}`}>
-        <Button as="a" cursor="pointer" mt={{ base: "2rem" }}>
-          See Product
-        </Button>
-      </Link>
+      <NextLink href={`/${slug}`} passHref>
+        <Link _hover={{ textDecoration: "none" }}>
+          <Button as="a" cursor="pointer" mt={{ base: "2rem" }}>
+            See Product
+          </Button>
+        </Link>
+      </NextLink>
     </Box>
   );
 };

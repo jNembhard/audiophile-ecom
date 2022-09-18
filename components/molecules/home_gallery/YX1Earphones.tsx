@@ -1,6 +1,13 @@
 import React from "react";
-import { Box, Image, Heading, Button, SimpleGrid } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Box,
+  Image,
+  Heading,
+  Button,
+  Link,
+  SimpleGrid,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 import Motion from "@components/organisms/Motion";
 
 const YX1Earphones = () => {
@@ -45,11 +52,13 @@ const YX1Earphones = () => {
             <Heading as="h2" fontSize="1.75rem" color="black" mb="2rem">
               YX1 Earphones
             </Heading>
-            <Link href="/earphones/yx1-earphones" passHref>
-              <Button as="a" variant="secondary">
-                See Product
-              </Button>
-            </Link>
+            <NextLink href="/earphones/yx1-earphones" passHref>
+              <Link _hover={{ textDecoration: "none" }}>
+                <Button as="a" variant="secondary">
+                  See Product
+                </Button>
+              </Link>
+            </NextLink>
           </Box>
         </Box>
       </Motion>

@@ -1,5 +1,13 @@
-import { Stack, Image, Box, Heading, Text, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import {
+  Stack,
+  Image,
+  Box,
+  Heading,
+  Text,
+  Link,
+  Button,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 import Motion from "@components/organisms/Motion";
 
 const ZX9Speaker = () => {
@@ -72,11 +80,13 @@ const ZX9Speaker = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </Text>
-            <Link href="/speakers/zx9-speaker" passHref>
-              <Button bg="black" _hover={{ bg: "#4C4C4C" }}>
-                See Product
-              </Button>
-            </Link>
+            <NextLink href="/speakers/zx9-speaker" passHref>
+              <Link _hover={{ textDecoration: "none" }}>
+                <Button bg="black" _hover={{ bg: "#4C4C4C" }}>
+                  See Product
+                </Button>
+              </Link>
+            </NextLink>
           </Box>
         </Stack>
       </Box>

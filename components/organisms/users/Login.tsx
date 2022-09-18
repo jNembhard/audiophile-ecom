@@ -5,6 +5,7 @@ import {
   Button,
   Stack,
   Box,
+  Link,
   Avatar,
   FormControl,
   useToast,
@@ -12,7 +13,7 @@ import {
 import InputField from "@components/molecules/InputField";
 import { useForm } from "react-hook-form";
 import { useAuth } from "@hooks/useAuth";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 import userSlice from "@store/userSlice";
 
@@ -143,11 +144,13 @@ const Login = () => {
         </Stack>
         <Box>
           New to Audiophile?{" "}
-          <Link href="/signup">
-            <Box as="a" cursor="pointer" color="rawSienna">
-              Sign Up
-            </Box>
-          </Link>
+          <NextLink href="/signup" passHref>
+            <Link _hover={{ textDecoration: "none" }}>
+              <Box as="a" cursor="pointer" color="rawSienna">
+                Sign Up
+              </Box>
+            </Link>
+          </NextLink>
         </Box>
       </Flex>
     </>

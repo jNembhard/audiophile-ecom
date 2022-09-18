@@ -1,5 +1,5 @@
-import { Stack, Box, useToast } from "@chakra-ui/react";
-import Link from "next/link";
+import { Stack, Box, Link, useToast } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { useAuth } from "@hooks/useAuth";
 import { useRouter } from "next/router";
 import { isMenuOpen, toggleNav } from "@store/menuSlice";
@@ -53,21 +53,32 @@ const LogoutLink = (props: Props) => {
                 Logout
               </Box>
               &nbsp;&nbsp;&nbsp;
-              <Link href="/orders" passHref>
+              <NextLink href="/orders" passHref>
+                <Link _hover={{ textDecoration: "none" }}>
+                  <Box
+                    as="a"
+                    _hover={{ color: "rawSienna" }}
+                    transition="color 0.2s linear"
+                    onClick={menuClose}
+                  >
+                    orders
+                  </Box>
+                </Link>
+              </NextLink>
+            </>
+          ) : (
+            <NextLink href="/login" passHref>
+              <Link _hover={{ textDecoration: "none" }}>
                 <Box
                   as="a"
                   _hover={{ color: "rawSienna" }}
                   transition="color 0.2s linear"
                   onClick={menuClose}
                 >
-                  orders
+                  Sign In
                 </Box>
               </Link>
-            </>
-          ) : (
-            <Link href="/login" passHref>
-              <a onClick={menuClose}>Sign In</a>
-            </Link>
+            </NextLink>
           )}
         </Box>
       </Stack>

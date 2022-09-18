@@ -1,5 +1,5 @@
-import { Box, Container, Heading, Text, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Container, Heading, Text, Link, Button } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { motion } from "framer-motion";
 
 const HeroBanner = () => {
@@ -79,19 +79,21 @@ const HeroBanner = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </MotionText>
-        <Link href="/headphones/xx99-mark-two-headphones" passHref>
-          <MotionButton
-            as="a"
-            cursor="pointer"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { delay: "1.5", duration: "1" },
-            }}
-          >
-            See Product
-          </MotionButton>
-        </Link>
+        <NextLink href="/headphones/xx99-mark-two-headphones" passHref>
+          <Link _hover={{ textDecoration: "none" }}>
+            <MotionButton
+              as="a"
+              cursor="pointer"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { delay: "1.5", duration: "1" },
+              }}
+            >
+              See Product
+            </MotionButton>
+          </Link>
+        </NextLink>
       </Container>
     </Box>
   );

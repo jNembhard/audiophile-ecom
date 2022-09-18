@@ -1,7 +1,7 @@
 import React from "react";
-import { HStack, Box } from "@chakra-ui/react";
+import { HStack, Box, Link } from "@chakra-ui/react";
 import { navlinks } from "@utils/navLinks";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 
 const NavLinks = () => {
@@ -39,11 +39,13 @@ const NavLink: React.FC<{
   const child = React.Children.only(children);
 
   return (
-    <Link href={href} passHref>
-      {React.cloneElement(child as React.ReactElement, {
-        "aria-current": active ? "page" : null,
-      })}
-    </Link>
+    <NextLink href={href} passHref>
+      <Link _hover={{ textDecoration: "none" }}>
+        {React.cloneElement(child as React.ReactElement, {
+          "aria-current": active ? "page" : null,
+        })}
+      </Link>
+    </NextLink>
   );
 };
 

@@ -1,6 +1,6 @@
-import { Stack, Box } from "@chakra-ui/react";
+import { Stack, Box, Link } from "@chakra-ui/react";
 import { navlinks } from "@utils/navLinks";
-import Link from "next/link";
+import NextLink from "next/link";
 
 const FooterLinks = () => {
   return (
@@ -20,7 +20,9 @@ const FooterLinks = () => {
           transition="color 0.2s linear"
           _hover={{ color: "rawSienna" }}
         >
-          <Link href={navlink.url}>{navlink.text}</Link>
+          <NextLink href={navlink.url} passHref>
+            <Link _hover={{ textDecoration: "none" }}>{navlink.text}</Link>
+          </NextLink>
         </Box>
       ))}
     </Stack>

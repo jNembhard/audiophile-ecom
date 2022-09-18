@@ -9,6 +9,7 @@ import {
   Flex,
   Box,
   List,
+  Link,
   Button,
   useBoolean,
 } from "@chakra-ui/react";
@@ -17,7 +18,7 @@ import { clearCart, cartItems } from "@store/CartSlice";
 import { useCartModal } from "@store/CartContextProvider";
 import useCartTotals from "@hooks/useCartTotals";
 import ItemSummary from "@components/molecules/ItemSummary";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useAuth } from "@hooks/useAuth";
 import { db } from "../../firebase";
 import {
@@ -181,11 +182,13 @@ const CheckoutModal = () => {
             </Text>
           </Flex>
         </Flex>
-        <Link href="/" passHref>
-          <Button as="a" onClick={handleClick} cursor="pointer">
-            Back to home
-          </Button>
-        </Link>
+        <NextLink href="/" passHref>
+          <Link _hover={{ textDecoration: "none" }}>
+            <Button as="a" onClick={handleClick} cursor="pointer">
+              Back to home
+            </Button>
+          </Link>
+        </NextLink>
       </ModalContent>
     </Modal>
   );

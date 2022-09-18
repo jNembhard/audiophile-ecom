@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { useCartModal } from "../../store/CartContextProvider";
 import {
@@ -18,7 +17,9 @@ import {
   Button,
   List,
   Text,
+  Link,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 import CartItem from "@components/molecules/CartItem";
 
 const CartModal = () => {
@@ -88,16 +89,18 @@ const CartModal = () => {
                   ${amount.toLocaleString("en-US")}
                 </Text>
               </HStack>
-              <Link href="/checkout" passHref>
-                <Button
-                  as="a"
-                  onClick={onCartModalClose}
-                  cursor="pointer"
-                  width="100%"
-                >
-                  Checkout
-                </Button>
-              </Link>
+              <NextLink href="/checkout" passHref>
+                <Link _hover={{ textDecoration: "none" }}>
+                  <Button
+                    as="a"
+                    onClick={onCartModalClose}
+                    cursor="pointer"
+                    width="100%"
+                  >
+                    Checkout
+                  </Button>
+                </Link>
+              </NextLink>
             </Box>
           ) : (
             <Box

@@ -1,5 +1,5 @@
-import { Box, Image, Heading, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Image, Heading, Link, Button } from "@chakra-ui/react";
+import NextLink from "next/link";
 import Motion from "@components/organisms/Motion";
 
 const ZX7Speaker = () => {
@@ -31,11 +31,13 @@ const ZX7Speaker = () => {
           <Heading color="black" fontSize="1.75rem" mb="2rem">
             ZX7 Speaker
           </Heading>
-          <Link href="/speakers/zx7-speaker" passHref>
-            <Button as="a" variant="secondary">
-              See Product
-            </Button>
-          </Link>
+          <NextLink href="/speakers/zx7-speaker" passHref>
+            <Link _hover={{ textDecoration: "none" }}>
+              <Button as="a" variant="secondary">
+                See Product
+              </Button>
+            </Link>
+          </NextLink>
         </Box>
       </Box>
     </Motion>

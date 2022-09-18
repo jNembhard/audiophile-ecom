@@ -8,11 +8,12 @@ import {
   Box,
   Flex,
   useToast,
+  Link,
 } from "@chakra-ui/react";
 import InputField from "@components/molecules/InputField";
 import { useAuth } from "@hooks/useAuth";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useRouter } from "next/router";
 
 type SignUpProps = { name: string; email: string; password: string };
@@ -131,11 +132,13 @@ const SignUp = () => {
         </Stack>
         <Box>
           Already a member?{" "}
-          <Link href="/login">
-            <Box as="a" cursor="pointer" color="rawSienna">
-              Login
-            </Box>
-          </Link>
+          <NextLink href="/login" passHref>
+            <Link _hover={{ textDecoration: "none" }}>
+              <Box as="a" cursor="pointer" color="rawSienna">
+                Login
+              </Box>
+            </Link>
+          </NextLink>
         </Box>
       </Flex>
     </>
