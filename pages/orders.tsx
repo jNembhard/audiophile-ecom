@@ -7,7 +7,8 @@ const OrderPage: NextPage = () => {
     <>
       <NextHead
         title="Orders"
-        metaDescription="View all of your past orders on Audiophile's website."
+        description="View all of your past orders on Audiophile's website."
+        type="webapp"
       />
       <OrderTemplate />
     </>

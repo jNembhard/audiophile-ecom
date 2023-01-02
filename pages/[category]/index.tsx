@@ -16,7 +16,8 @@ const CategoryPage = (props: Props) => {
     <>
       <NextHead
         title={`${category}`}
-        metaDescription={`Check out Audiophile's latest ${category}.`}
+        description={`Check out Audiophile's latest ${category}.`}
+        type="webapp"
       />
       <CategoryTemplate products={props.products} />
     </>

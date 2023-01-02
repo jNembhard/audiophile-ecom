@@ -8,7 +8,8 @@ const CheckoutPage: NextPage = () => {
     <>
       <NextHead
         title="Checkout"
-        metaDescription="You're almost there! Fill out the form and enjoy your new Audiophile products."
+        description="You're almost there! Fill out the form and enjoy your new Audiophile products."
+        type="webapp"
       />
       <Box bg="alabaster">
         <CheckoutPageTemplate />

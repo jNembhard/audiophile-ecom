@@ -7,7 +7,8 @@ const Home: NextPage = () => {
     <>
       <NextHead
         title="Home"
-        metaDescription="Audiophile is the premier store for high end headphones, earphones, speakers, and accessories. Browse our collection."
+        description="Audiophile is the premier store for high end headphones, earphones, speakers, and accessories. Browse our collection."
+        type="webapp"
       />
       <HomePage />
     </>

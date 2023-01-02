@@ -12,7 +12,8 @@ const ProductPage: React.FC<Props> = (props: Props) => {
     <>
       <NextHead
         title={`${props.product.name}`}
-        metaDescription={`${props.product.description}`}
+        description={`${props.product.description}`}
+        type="webapp"
       />
       <ProductPageTemplate product={props.product} />
     </>

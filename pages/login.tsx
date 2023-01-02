@@ -7,7 +7,8 @@ const LoginPage: NextPage = () => {
     <>
       <NextHead
         title="Login"
-        metaDescription="Login to your account to track orders"
+        description="Login to your account to track orders"
+        type="webapp"
       />
       <Login />
     </>
