@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { getProductsByCategory, getCategories } from "@utils/products";
-import { Product } from "@interfaces/Product";
-import CategoryTemplate from "@components/templates/CategoryTemplate";
-import Params from "@interfaces/Params";
-import NextHead from "@components/atoms/NextHead";
+import { getProductsByCategory, getCategories } from "@/utils/products";
+import { Product } from "@/interfaces/Product";
+import CategoryTemplate from "@/components/templates/CategoryTemplate";
+import Params from "@/interfaces/Params";
+import NextHead from "@/components/atoms/NextHead";
 
 type Props = { products: Product[]; product: Product };
 

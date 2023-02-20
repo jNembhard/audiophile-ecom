@@ -10,8 +10,8 @@ import {
   useToast,
   Link,
 } from "@chakra-ui/react";
-import InputField from "@components/molecules/InputField";
-import { useAuth } from "@hooks/useAuth";
+import InputField from "@/components/molecules/InputField";
+import { useAuth } from "@/hooks/useAuth";
 import { useForm } from "react-hook-form";
 import NextLink from "next/link";
 import { useRouter } from "next/router";

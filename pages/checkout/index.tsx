@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Box } from "@chakra-ui/react";
-import CheckoutPageTemplate from "@components/templates/CheckoutPageTemplate";
-import NextHead from "@components/atoms/NextHead";
+import CheckoutPageTemplate from "@/components/templates/CheckoutPageTemplate";
+import NextHead from "@/components/atoms/NextHead";
 
 const CheckoutPage: NextPage = () => {
   return (

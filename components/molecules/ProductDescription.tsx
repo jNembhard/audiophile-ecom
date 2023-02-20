@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Heading, Text, HStack, Button, useToast } from "@chakra-ui/react";
-import { Product } from "@interfaces/Product";
+import { Product } from "@/interfaces/Product";
 import { useDispatch } from "react-redux";
-import { addItemToCart } from "@store/CartSlice";
-import ProductQuantity from "@components/atoms/ProductQuantity";
+import { addItemToCart } from "@/store/CartSlice";
+import ProductQuantity from "@/components/atoms/ProductQuantity";
 
 const ProductDescription = ({ product }: { product: Product }): JSX.Element => {
   // give feedback to users after an action has taken place

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useCartModal } from "../../store/CartContextProvider";
+import { useCartModal } from "@/store/CartContextProvider";
 import {
   cartItems,
   clearCart,
@@ -20,7 +20,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import CartItem from "@components/molecules/CartItem";
+import CartItem from "@/components/molecules/CartItem";
 
 const CartModal = () => {
   const items = useSelector(cartItems);

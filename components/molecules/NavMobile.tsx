@@ -1,9 +1,9 @@
 import { Box, Stack, Flex } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { isMenuOpen, toggleNav } from "@store/menuSlice";
+import { isMenuOpen, toggleNav } from "@/store/menuSlice";
 import MobileLink from "./MobileLink";
-import { navlinks } from "@utils/navLinks";
-import LogoutLink from "@components/atoms/LogoutLink";
+import { navlinks } from "@/utils/navLinks";
+import LogoutLink from "@/components/atoms/LogoutLink";
 
 const NavMobile = () => {
   const openMenu = useSelector(isMenuOpen);

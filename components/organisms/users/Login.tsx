@@ -10,12 +10,12 @@ import {
   FormControl,
   useToast,
 } from "@chakra-ui/react";
-import InputField from "@components/molecules/InputField";
+import InputField from "@/components/molecules/InputField";
 import { useForm } from "react-hook-form";
-import { useAuth } from "@hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import userSlice from "@store/userSlice";
+import userSlice from "@/store/userSlice";
 
 interface LoginProps {
   email: string;

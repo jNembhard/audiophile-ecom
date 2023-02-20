@@ -14,12 +14,12 @@ import {
   useBoolean,
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
-import { clearCart, cartItems } from "@store/CartSlice";
-import { useCartModal } from "@store/CartContextProvider";
-import useCartTotals from "@hooks/useCartTotals";
-import ItemSummary from "@components/molecules/ItemSummary";
+import { clearCart, cartItems } from "@/store/CartSlice";
+import { useCartModal } from "@/store/CartContextProvider";
+import useCartTotals from "@/hooks/useCartTotals";
+import ItemSummary from "@/components/molecules/ItemSummary";
 import NextLink from "next/link";
-import { useAuth } from "@hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 import { db } from "../../firebase";
 import {
   addDoc,

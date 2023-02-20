@@ -1,6 +1,6 @@
 import { Box, Portal } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { isMenuOpen } from "@store/menuSlice";
+import { isMenuOpen } from "@/store/menuSlice";
 
 const FocusPortal = () => {
   const openMenu = useSelector(isMenuOpen);

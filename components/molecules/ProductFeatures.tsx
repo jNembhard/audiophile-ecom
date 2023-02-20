@@ -7,7 +7,7 @@ import {
   ListItem,
   SimpleGrid,
 } from "@chakra-ui/react";
-import { IncludedItem } from "@interfaces/Product";
+import { IncludedItem } from "@/interfaces/Product";
 
 type Props = {
   features: string | undefined;

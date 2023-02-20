@@ -1,6 +1,6 @@
 import React from "react";
 import { HStack, Box, Link } from "@chakra-ui/react";
-import { navlinks } from "@utils/navLinks";
+import { navlinks } from "@/utils/navLinks";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 

@@ -10,13 +10,13 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useCartModal } from "@store/CartContextProvider";
+import { useCartModal } from "@/store/CartContextProvider";
 
 import React from "react";
-import Legend from "@components/atoms/Legend";
-import InputField from "@components/molecules/InputField";
-import Radio from "@components/atoms/Radio";
-import Summary from "@components/molecules/Summary";
+import Legend from "@/components/atoms/Legend";
+import InputField from "@/components/molecules/InputField";
+import Radio from "@/components/atoms/Radio";
+import Summary from "@/components/molecules/Summary";
 
 type InputProps = {
   name: string;

@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { isMenuOpen, toggleNav } from "@store/menuSlice";
+import { isMenuOpen, toggleNav } from "@/store/menuSlice";
 
 const Logo = () => {
   const menuOpen = useSelector(isMenuOpen);

@@ -1,7 +1,7 @@
 import { Box, Container, Stack, SimpleGrid, Text } from "@chakra-ui/react";
-import Logo from "@components/atoms/Logo";
-import FooterLinks from "@components/molecules/FooterLinks";
-import Socials from "@components/molecules/Socials";
+import Logo from "@/components/atoms/Logo";
+import FooterLinks from "@/components/molecules/FooterLinks";
+import Socials from "@/components/molecules/Socials";
 
 const Footer = () => {
   let date = new Date().getFullYear();
@@ -54,7 +54,12 @@ const Footer = () => {
             are devoted to helping you get the most out of personal audio. Come
             and visit our demo facility - we&apos;re open 7 days a week.
           </Text>
-          <Text variant="darkBackground" gridArea={{ sm: "b" }} color="gray">
+          <Text
+            data-testid="copyright"
+            variant="darkBackground"
+            gridArea={{ sm: "b" }}
+            color="gray"
+          >
             Copyright {date}. All Rights Reserved
           </Text>
           <Box

@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
-import { Product } from "@interfaces/Product";
-import ProductListItem from "@components/molecules/ProductListItem";
+import { Product } from "@/interfaces/Product";
+import ProductListItem from "@/components/molecules/ProductListItem";
 
 type Props = { products: Product[] };
 

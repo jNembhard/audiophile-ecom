@@ -1,6 +1,6 @@
 import { Box, Heading, Link, Image, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { OtherProductProps } from "@components/organisms/ProductOthers";
+import { OtherProductProps } from "@/components/organisms/ProductOthers";
 
 const OtherProductLink: React.FC<OtherProductProps> = ({
   slug,

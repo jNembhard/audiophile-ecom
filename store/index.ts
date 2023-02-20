@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import menuReducer from "./menuSlice";
 import cartReducer from "./CartSlice";
 import userReducer from "./userSlice";
-import { saveCart } from "@utils/localStorage";
+import { saveCart } from "@/utils/localStorage";
 
 const store = configureStore({
   reducer: {

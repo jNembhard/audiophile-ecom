@@ -1,5 +1,5 @@
 import { Box, Heading, Stack } from "@chakra-ui/react";
-import OtherProductLink from "@components/molecules/OtherProductLink";
+import OtherProductLink from "@/components/molecules/OtherProductLink";
 import Motion from "./Motion";
 
 export type OtherProductProps = {

@@ -8,7 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-import Motion from "@components/organisms/Motion";
+import Motion from "@/components/organisms/Motion";
 
 const ZX9Speaker = () => {
   return (

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import NextHead from "@components/atoms/NextHead";
-import Login from "@components/organisms/users/Login";
+import NextHead from "@/components/atoms/NextHead";
+import Login from "@/components/organisms/users/Login";
 
 const LoginPage: NextPage = () => {
   return (

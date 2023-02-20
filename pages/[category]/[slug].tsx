@@ -1,9 +1,9 @@
-import Params from "@interfaces/Params";
-import { Product } from "@interfaces/Product";
-import { getProductPaths, getProductBySlug } from "@utils/products";
+import Params from "@/interfaces/Params";
+import { Product } from "@/interfaces/Product";
+import { getProductPaths, getProductBySlug } from "@/utils/products";
 import { GetStaticPaths, GetStaticProps } from "next";
-import ProductPageTemplate from "@components/templates/ProductPageTemplate";
-import NextHead from "@components/atoms/NextHead";
+import ProductPageTemplate from "@/components/templates/ProductPageTemplate";
+import NextHead from "@/components/atoms/NextHead";
 
 type Props = { product: Product };
 

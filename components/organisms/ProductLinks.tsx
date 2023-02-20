@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "@chakra-ui/react";
-import { navlinks } from "@utils/navLinks";
-import ProductLink from "@components/molecules/ProductLink";
+import { navlinks } from "@/utils/navLinks";
+import ProductLink from "@/components/molecules/ProductLink";
 import Motion from "./Motion";
 
 const ProductLinks = () => {

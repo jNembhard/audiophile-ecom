@@ -11,10 +11,10 @@ import {
   List,
   Show,
 } from "@chakra-ui/react";
-import ItemSummary from "@components/molecules/ItemSummary";
+import ItemSummary from "@/components/molecules/ItemSummary";
 import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
-import { useAuth } from "@hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 
 const Orders = () => {
   const [orders, setOrders]: any[] = useState([]);

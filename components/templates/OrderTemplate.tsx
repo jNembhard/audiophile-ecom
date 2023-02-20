@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Container } from "@chakra-ui/react";
-import Orders from "@components/organisms/Orders";
+import Orders from "@/components/organisms/Orders";
 
 const OrderTemplate = () => {
   return (
