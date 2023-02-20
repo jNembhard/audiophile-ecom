@@ -45,23 +45,25 @@ const CheckoutModal = () => {
 
   const handleClick = async () => {
     onCheckoutModalClose();
-    const docRef = doc(db, `users/${user.uid}/orders`, user.email);
-    console.log(user);
-    const userQuery = query(collection(db, "users"));
 
-    const querySnapshot = await getDocs(userQuery);
-    const queryData = querySnapshot.docs.map((items) => ({
-      ...items,
-      email: user.email,
-      timestamp: serverTimestamp(),
-    }));
+    if (user) {
+      const docRef = doc(db, `users/${user.uid}/orders`, user.email);
+      const userQuery = query(collection(db, "users"));
 
-    queryData.map(async () => {
-      await setDoc(docRef, {
-        basket: { products: [...items] },
+      const querySnapshot = await getDocs(userQuery);
+      const queryData = querySnapshot.docs.map((items) => ({
+        ...items,
+        email: user.email,
         timestamp: serverTimestamp(),
+      }));
+
+      queryData.map(async () => {
+        await setDoc(docRef, {
+          basket: { products: [...items] },
+          timestamp: serverTimestamp(),
+        });
       });
-    });
+    }
 
     dispatch(clearCart());
   };
