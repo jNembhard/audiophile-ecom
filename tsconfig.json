@@ -30,7 +30,8 @@
       "@/molecules/*": ["molecules/*"],
       "@/organisms/*": ["organisms/*"],
       "@/templates/*": ["templates/*"],
-      "@/test_utils/*": ["test_utils/*"]
+      // "@/test_utils/*": ["test_utils/*"],
+      "@/test_utils_two/*": ["test_utils_two/*"]
       // "@/tests/*":["__tests__/*"]
     },
   },

@@ -6,7 +6,7 @@ import {
   queryByAttribute,
   getByTestId,
 } from "@testing-library/react";
-import { RenderWrapper } from "@/test_utils/RenderWrapper";
+import { RenderWrapper } from "../../test_utlis_two/RenderWrapper";
 import Home from "@/pages/index";
 
 // const getById = queryByAttribute.bind(null, "id");

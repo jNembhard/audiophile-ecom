@@ -5,11 +5,6 @@ import { Provider } from "react-redux";
 import store from "../store/index";
 import CartContextProvider from "../store/CartContextProvider";
 import { AuthContextProvider } from "../hooks/useAuth";
-import Header from "@/components/organisms/Header";
-import Footer from "@/components/organisms/Footer";
-import CartModal from "../components/organisms/CartModal";
-import FocusPortal from "../components/atoms/FocusPortal";
-import CheckoutModal from "../components/organisms/CheckoutModal";
 
 export const RenderWrapper = ({ children }: { children: ReactNode }) => (
   <ChakraProvider theme={theme} resetCSS>

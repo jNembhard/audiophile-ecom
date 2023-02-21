@@ -29,6 +29,7 @@ const customJestConfig = {
     "^@/organisms/(.*)$": "<rootDir>/organisms/$1",
     "^@/templates/(.*)$": "<rootDir>/templates/$1",
     "^@/test_utils/(.*)$": "<rootDir>/test_utils/$1",
+    "^@/test_utils_two/(.*)$": "<rootDir>/test_utils_two/$1",
     // "^@/__tests__/(.*)$": "<rootDir>/__tests__/$1",
   },
   // testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
