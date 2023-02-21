@@ -3,32 +3,26 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { ChakraWrapper } from "../../../test_utlis_two/ChakraWrapper";
 import { RenderWrapper } from "../../../test_utlis_two/RenderWrapper";
-import HomePage from "@/components/templates/HomePage";
+import { ReduxWrapper } from "../../../test_utlis_two/ReduxWrapper";
+import HomeProductGallery from "@/components/organisms/HomeProductGallery";
+import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 
-jest.mock("../../../components/organisms/ProductLinks", () => {
-  return <div data-testid="product-links" />;
-});
+const cases = ["YX1 Earphones", "ZX7 Speakers", "ZX-9 Speakers"];
+describe("Home Product Gallery", () => {
+  test.each(cases)(
+    "should render all Earphone, Headphone, and Speaker components",
+    (text) => {
+      render(
+        <ReduxWrapper>
+          <HomeProductGallery />
+        </ReduxWrapper>
+      );
 
-jest.mock("@/components/organisms/HomeProductGallery", () => (
-  <div data-testid="gallery" />
-));
-jest.mock("@/components/organisms/MotionAudioGear", () => (
-  <div data-testid="audio-gear" />
-));
-describe("HomePage", () => {
-  it("should render the HomePage Template", () => {
-    // render(<HomePage />, { wrapper: ChakraWrapper });
-    render(
-      <RenderWrapper>
-        <HomePage />
-      </RenderWrapper>
-    );
+      mockAllIsIntersecting(true);
 
-    const products = screen.getByTestId("product-links");
-    // const audioGear = screen.getByTestId("audio-gear");
+      const galleryItem = screen.getByAltText(text);
 
-    expect(products).toBeInTheDocument();
-    // expect(gallery).toBeInTheDocument();
-    // expect(audioGear).toBeInTheDocument();
-  });
+      expect(galleryItem).toBeInTheDocument();
+    }
+  );
 });
