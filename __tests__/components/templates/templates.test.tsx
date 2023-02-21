@@ -6,23 +6,16 @@ import { RenderWrapper } from "../../../test_utlis_two/RenderWrapper";
 import { ReduxWrapper } from "../../../test_utlis_two/ReduxWrapper";
 import HomeProductGallery from "@/components/organisms/HomeProductGallery";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
+import HomePage from "@/components/templates/HomePage";
 
-const cases = ["YX1 Earphones", "ZX7 Speakers", "ZX-9 Speakers"];
-describe("Home Product Gallery", () => {
-  test.each(cases)(
-    "should render all Earphone, Headphone, and Speaker components",
-    (text) => {
-      render(
-        <ReduxWrapper>
-          <HomeProductGallery />
-        </ReduxWrapper>
-      );
+describe("HomePage", () => {
+  it("Should render the HomePage Template component", () => {
+    render(<HomePage />);
 
-      mockAllIsIntersecting(true);
+    const products = screen.queryByText(
+      "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound."
+    );
 
-      const galleryItem = screen.getByAltText(text);
-
-      expect(galleryItem).toBeInTheDocument();
-    }
-  );
+    expect(products).toBeInTheDocument();
+  });
 });

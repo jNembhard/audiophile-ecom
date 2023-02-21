@@ -10,6 +10,8 @@ import ProductLinks from "@/components/organisms/ProductLinks";
 import { ReduxWrapper } from "../../../test_utlis_two/ReduxWrapper";
 import { FullRenderWrapper } from "../../../test_utlis_two/FullRenderWrapper";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
+import MotionAudioGear from "@/components/organisms/MotionAudioGear";
+import HomeProductGallery from "@/components/organisms/HomeProductGallery";
 
 describe("Hero Banner", () => {
   it("should render the Hero Banner", () => {
@@ -60,6 +62,38 @@ describe("Product Links", () => {
         src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
       />
     `);
+  });
+});
+
+const cases = ["YX1 Earphones", "ZX7 Speakers", "ZX-9 Speakers"];
+describe("Home Product Gallery", () => {
+  test.each(cases)(
+    "should render all Earphone, Headphone, and Speaker components",
+    (text) => {
+      render(
+        <ReduxWrapper>
+          <HomeProductGallery />
+        </ReduxWrapper>
+      );
+
+      mockAllIsIntersecting(true);
+      const galleryItem = screen.getByAltText(text);
+
+      expect(galleryItem).toBeInTheDocument();
+    }
+  );
+});
+
+describe("Motion AudioGear", () => {
+  it("should render the Motion AudioGear component and AudioGear subcomponent", () => {
+    render(<MotionAudioGear />);
+
+    mockAllIsIntersecting(true);
+
+    const image = screen.getByAltText(
+      "A boy enjoying headphones from audiophile"
+    );
+    expect(image).toBeInTheDocument();
   });
 });
 
