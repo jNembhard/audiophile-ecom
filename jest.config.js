@@ -1,52 +1,37 @@
 // /** @type {import('ts-jest').JestConfigWithTsJest} */
 const nextJest = require("next/jest");
 
+const createJestConfig = nextJest({
+  dir: "./",
+});
+
+// /** @type {import('ts-jest').JestConfigWithTsJest} */
+
 const customJestConfig = {
   // preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
+  // modulePaths: ["<rootDir>/"],
   // moduleDirectories: ["node_modules", "<rootDir>/"],
-  // testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   testEnvironment: "jest-environment-jsdom",
-  // testEnvironment: "node",
-};
-
-const createJestConfig = nextJest({
-  dir: "./",
-})(customJestConfig);
-
-module.exports = async () => {
-  const jestConfig = await createJestConfig();
-
-  const moduleNameMapper = {
-    ...jestConfig.moduleNameMapper,
-    // Handle module aliases (this will be automatically configured for you soon)
+  moduleNameMapper: {
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
-    "^/@/assets/(.*)$": "<rootDir>/assets/$1",
-    "^/@/hooks/(.*)$": "<rootDir>/hooks/$1",
-    "^/@/data/(.*)$": "<rootDir>/data/$1",
-    "^/@/interfaces/(.*)$": "<rootDir>/interfaces/$1",
-    "^/@/store/(.*)$": "<rootDir>/store/$1",
-    "^/@/styles/(.*)$": "<rootDir>/styles/$1",
-    "^/@/utils/(.*)$": "<rootDir>/utils/$1",
-    "^/@/variables/(.*)$": "<rootDir>/variables/$1",
-    "^/@/atoms/(.*)$": "<rootDir>/atoms/$1",
-    "^/@/molecules/(.*)$": "<rootDir>/molecules/$1",
-    "^/@/organisms/(.*)$": "<rootDir>/organisms/$1",
-    "^/@/templates/(.*)$": "<rootDir>/templates/$1",
-  };
-  return { ...jestConfig, moduleNameMapper };
+    "^@/assets/(.*)$": "<rootDir>/assets/$1",
+    "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
+    "^@/data/(.*)$": "<rootDir>/data/$1",
+    "^@/interfaces/(.*)$": "<rootDir>/interfaces/$1",
+    "^@/store/(.*)$": "<rootDir>/store/$1",
+    "^@/styles/(.*)$": "<rootDir>/styles/$1",
+    "^@/utils/(.*)$": "<rootDir>/utils/$1",
+    "^@/variables/(.*)$": "<rootDir>/variables/$1",
+    "^@/atoms/(.*)$": "<rootDir>/atoms/$1",
+    "^@/molecules/(.*)$": "<rootDir>/molecules/$1",
+    "^@/organisms/(.*)$": "<rootDir>/organisms/$1",
+    "^@/templates/(.*)$": "<rootDir>/templates/$1",
+    "^@/test_utils/(.*)$": "<rootDir>/test_utils/$1",
+    // "^@/__tests__/(.*)$": "<rootDir>/__tests__/$1",
+  },
+  // testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
 };
 
-// const customJestConnfig = {
-//   setupFilesAfterEnv: [`<rootDir>/jest.setup.ts`],
-//   testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
-// };
-
-// module.exports = createJestConfig(customJestConfig);
-
-// module.exports = {
-//   preset: "ts-jest",
-//   testEnvironment: "node",
-// };
+module.exports = createJestConfig(customJestConfig);

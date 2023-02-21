@@ -5,6 +5,7 @@ const SkipLink = () => {
     <Button
       as="a"
       href="#main"
+      data-testid="skip-link"
       position="absolute"
       left="1rem"
       top="6.25rem"

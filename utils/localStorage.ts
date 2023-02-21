@@ -1,4 +1,4 @@
-import { CartSlice } from "@store/CartSlice";
+import { CartSlice } from "@/store/CartSlice";
 
 export const loadCart = (): CartSlice | undefined => {
   try {
