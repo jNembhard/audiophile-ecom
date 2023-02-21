@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/__tests__
+/test_utils
 
 # next.js
 /.next/
@@ -39,3 +41,4 @@ yarn-error.log*
 *.fig
 *.xd
 .env
+
