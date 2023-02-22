@@ -7,8 +7,7 @@
 
 # testing suite
 /coverage
-/__tests__
-/test_utils
+
 
 # next.js
 /.next/

@@ -1,14 +1,12 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { RenderWrapper } from "../../../test_utlis_two/RenderWrapper";
+import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
 import HeroBanner from "@/components/organisms/HeroBanner";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import ProductLink from "@/components/molecules/ProductLink";
 import ProductLinks from "@/components/organisms/ProductLinks";
-import { ReduxWrapper } from "../../../test_utlis_two/ReduxWrapper";
-import { FullRenderWrapper } from "../../../test_utlis_two/FullRenderWrapper";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 import MotionAudioGear from "@/components/organisms/MotionAudioGear";
 import HomeProductGallery from "@/components/organisms/HomeProductGallery";
@@ -55,13 +53,13 @@ describe("Product Links", () => {
 
     const link = screen.getByAltText("Earphones");
     expect(link).toMatchInlineSnapshot(`
-      <img
-        alt="Earphones"
-        aria-hidden="true"
-        class="chakra-image css-qf5r57"
-        src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
-      />
-    `);
+    <img
+      alt="Earphones"
+      aria-hidden="true"
+      class="chakra-image css-qf5r57"
+      src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
+    />
+  `);
   });
 });
 
