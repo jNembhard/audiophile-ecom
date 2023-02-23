@@ -10,6 +10,11 @@ import ProductLinks from "@/components/organisms/ProductLinks";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 import MotionAudioGear from "@/components/organisms/MotionAudioGear";
 import HomeProductGallery from "@/components/organisms/HomeProductGallery";
+import { ChakraWrapper } from "@/test_utils/ChakraWrapper";
+import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
+import { getStaticProps } from "@/pages/[category]/index";
+import { GetStaticPropsContext } from "next";
+import ProductList from "@/components/organisms/ProductList";
 
 describe("Hero Banner", () => {
   it("should render the Hero Banner", () => {
@@ -64,6 +69,7 @@ describe("Product Links", () => {
 });
 
 const cases = ["YX1 Earphones", "ZX7 Speakers", "ZX-9 Speakers"];
+
 describe("Home Product Gallery", () => {
   test.each(cases)(
     "should render all Earphone, Headphone, and Speaker components",
@@ -80,6 +86,39 @@ describe("Home Product Gallery", () => {
       expect(galleryItem).toBeInTheDocument();
     }
   );
+});
+
+jest.clearAllMocks();
+
+describe("ProductList", () => {
+  mockNextUseRouter({
+    route: "/speakers",
+    pathname: "/speakers",
+    query: "speakers",
+    asPath: "",
+  });
+  it("Should render the ProductList component and match the query category", async () => {
+    const context = {
+      params: { category: "speakers", slug: "/speakers" },
+    };
+    const value: any = await getStaticProps(context as GetStaticPropsContext);
+    const result = value.props.products;
+
+    render(
+      <ChakraWrapper>
+        <ProductList products={result} />
+      </ChakraWrapper>
+    );
+
+    const productItem = screen.getByAltText("ZX9 Speaker");
+    expect(productItem).toMatchInlineSnapshot(`
+      <img
+        alt="ZX9 Speaker"
+        class="chakra-image css-1pz0uuv"
+        src="/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg"
+      />
+    `);
+  });
 });
 
 describe("Motion AudioGear", () => {

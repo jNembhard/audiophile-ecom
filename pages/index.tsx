@@ -5,7 +5,7 @@ import NextHead from "@/components/atoms/NextHead";
 
 const Home: NextPage = () => {
   return (
-    <Fragment data-testid="home-page">
+    <Fragment>
       <NextHead
         title="Home"
         description="Audiophile is the premier store for high end headphones, earphones, speakers, and accessories. Browse our collection."

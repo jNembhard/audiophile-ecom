@@ -82,7 +82,6 @@ const HeroBanner = () => {
         <NextLink href="/headphones/xx99-mark-two-headphones" passHref>
           <Link _hover={{ textDecoration: "none" }}>
             <MotionButton
-              as="a"
               cursor="pointer"
               initial={{ opacity: 0 }}
               animate={{

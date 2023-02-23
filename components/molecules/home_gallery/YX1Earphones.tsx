@@ -54,9 +54,7 @@ const YX1Earphones = () => {
             </Heading>
             <NextLink href="/earphones/yx1-earphones" passHref>
               <Link _hover={{ textDecoration: "none" }}>
-                <Button as="a" variant="secondary">
-                  See Product
-                </Button>
+                <Button variant="secondary">See Product</Button>
               </Link>
             </NextLink>
           </Box>

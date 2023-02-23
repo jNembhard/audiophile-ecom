@@ -82,9 +82,7 @@ const ProductListItem: React.FC<Product> = ({
         </Text>
         <NextLink href={`/${category}/${slug}`} passHref>
           <Link _hover={{ textDecoration: "none" }}>
-            <Button as="a" cursor="pointer">
-              See Product
-            </Button>
+            <Button cursor="pointer">See Product</Button>
           </Link>
         </NextLink>
       </Box>

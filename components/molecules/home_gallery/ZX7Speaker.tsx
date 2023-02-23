@@ -33,9 +33,7 @@ const ZX7Speaker = () => {
           </Heading>
           <NextLink href="/speakers/zx7-speaker" passHref>
             <Link _hover={{ textDecoration: "none" }}>
-              <Button as="a" variant="secondary">
-                See Product
-              </Button>
+              <Button variant="secondary">See Product</Button>
             </Link>
           </NextLink>
         </Box>
