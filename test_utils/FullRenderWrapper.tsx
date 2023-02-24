@@ -16,9 +16,7 @@ export const FullRenderWrapper = ({ children }: { children: ReactNode }) => (
     <Provider store={store}>
       <CartContextProvider>
         <AuthContextProvider>
-          {/* <Header /> */}
           {children}
-          {/* <Footer /> */}
           <CartModal />
           <FocusPortal />
           <CheckoutModal />

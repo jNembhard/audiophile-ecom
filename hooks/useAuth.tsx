@@ -8,9 +8,8 @@ import {
 import { auth } from "../firebase";
 import { useState } from "react";
 
-const AuthContext = createContext<any>({});
-
 export const useAuth = () => useContext(AuthContext);
+export const AuthContext = createContext<any>({});
 
 export const AuthContextProvider = ({
   children,
@@ -23,7 +22,7 @@ export const AuthContextProvider = ({
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      // console.log(user);
 
       user
         ? setUser({

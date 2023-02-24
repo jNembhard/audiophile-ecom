@@ -1,6 +1,7 @@
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
+const useAuth = jest.spyOn(require("@/hooks/useAuth"), "useAuth");
 
-export function mockNextUseRouter(props: {
+function mockNextUseRouter(props: {
   route: string;
   pathname: string;
   query: string;
@@ -13,3 +14,19 @@ export function mockNextUseRouter(props: {
     asPath: props.asPath,
   }));
 }
+
+function mockUseAuth(props: {
+  user: { uid: string; email: string; displayName: string };
+  login: { email: string; password: string };
+  signUp: { email: string; password: string };
+  logout: null;
+}) {
+  useAuth.mockImplementationOnce(() => ({
+    user: props.user,
+    login: props.login,
+    signUp: props.signUp,
+    logout: props.logout,
+  }));
+}
+
+export { mockNextUseRouter, mockUseAuth };

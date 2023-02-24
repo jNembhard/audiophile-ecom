@@ -1,4 +1,4 @@
-import { Stack, Box, Link, useToast } from "@chakra-ui/react";
+import { Stack, Box, Link, useToast, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
@@ -23,7 +23,7 @@ const LogoutLink = (props: Props) => {
 
   return (
     <Box as="nav" display={{ base: `${props.base}`, lg: "block" }}>
-      <Stack display="flex" spacing={{ lg: "1rem" }}>
+      <Stack display="flex" flexDirection="row" spacing={{ lg: "1rem" }}>
         <Box
           fontSize="sm"
           fontWeight="bold"
@@ -32,7 +32,7 @@ const LogoutLink = (props: Props) => {
           cursor="pointer"
         >
           {user ? (
-            <>
+            <Flex>
               <Box
                 as="a"
                 _hover={{ color: "rawSienna" }}
@@ -56,7 +56,6 @@ const LogoutLink = (props: Props) => {
               <NextLink href="/orders" passHref>
                 <Link _hover={{ textDecoration: "none" }}>
                   <Box
-                    as="a"
                     _hover={{ color: "rawSienna" }}
                     transition="color 0.2s linear"
                     onClick={menuClose}
@@ -65,12 +64,11 @@ const LogoutLink = (props: Props) => {
                   </Box>
                 </Link>
               </NextLink>
-            </>
+            </Flex>
           ) : (
             <NextLink href="/login" passHref>
               <Link _hover={{ textDecoration: "none" }}>
                 <Box
-                  as="a"
                   _hover={{ color: "rawSienna" }}
                   transition="color 0.2s linear"
                   onClick={menuClose}

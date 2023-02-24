@@ -32,14 +32,10 @@ const Orders = () => {
             date: doc.data().timestamp.toDate().toLocaleDateString("en-US"),
             time: doc.data().timestamp.toDate().toLocaleTimeString(),
           });
-          // console.log(doc.data().timestamp.toDate());
         }
       });
-
-      // alert("Data retrieved from firestore!");
     } catch (error) {
       console.log(error);
-      // alert(error);
     }
   };
 

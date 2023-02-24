@@ -7,6 +7,9 @@ import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
+import { AuthContext } from "@/hooks/useAuth";
+import { act } from "react-dom/test-utils";
+import LoginPage from "@/pages/login";
 
 describe("Home", () => {
   it("should render the Index Page", () => {
@@ -40,3 +43,32 @@ describe("CategoryRouter", () => {
     expect(routerText.name).toBe("XX99 Mark II Headphones");
   });
 });
+
+const user = jest.fn();
+const signUp = jest.fn();
+const login = jest.fn();
+const logout = jest.fn();
+
+describe("Login", () => {
+  it("should render login components", async () => {
+    act(() => {
+      render(
+        <ReduxWrapper>
+          <AuthContext.Provider value={{ user, login, signUp, logout }}>
+            <LoginPage />
+          </AuthContext.Provider>
+        </ReduxWrapper>
+      );
+    });
+
+    await act(async () => {
+      const loginButton = screen.getByRole("button");
+      const signupText = screen.getByText("Sign Up");
+
+      expect(loginButton).toHaveTextContent("Login");
+      expect(signupText).toBeInTheDocument();
+    });
+  });
+});
+
+jest.clearAllMocks();
