@@ -130,16 +130,16 @@ const SignUp = () => {
             </Stack>
           </Box>
         </Stack>
-        <Box>
+        <Flex>
           Already a member?{" "}
           <NextLink href="/login" passHref>
             <Link _hover={{ textDecoration: "none" }}>
-              <Box as="a" cursor="pointer" color="rawSienna">
+              <Box cursor="pointer" color="rawSienna" paddingLeft="0.1875rem">
                 Login
               </Box>
             </Link>
           </NextLink>
-        </Box>
+        </Flex>
       </Flex>
     </>
   );

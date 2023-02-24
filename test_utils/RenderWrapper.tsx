@@ -10,6 +10,7 @@ export const RenderWrapper = ({ children }: { children: ReactNode }) => (
   <ChakraProvider theme={theme} resetCSS>
     <Provider store={store}>
       <CartContextProvider>
+        {children}
         <AuthContextProvider>{children}</AuthContextProvider>
       </CartContextProvider>
     </Provider>
