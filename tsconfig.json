@@ -31,7 +31,6 @@
       "@/organisms/*": ["organisms/*"],
       "@/templates/*": ["templates/*"],
       "@/test_utils/*": ["test_utils/*"],
-      // "@/tests/*":["__tests__/*"]
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.js"],

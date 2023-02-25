@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import SkipLink from "@/components/atoms/SkipLink";
 import NextHead from "@/components/atoms/NextHead";
-import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
+import { ReduxWrapper } from "@/test_utils/MockWrappers";
 import GoBackLink from "@/components/atoms/GoBackLink";
 import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 

@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Home from "@/pages/index";
-import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
+import { ReduxWrapper } from "@/test_utils/MockWrappers";
 import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";

@@ -6,7 +6,7 @@ import HomePage from "@/components/templates/HomePage";
 import CategoryTemplate from "@/components/templates/CategoryTemplate";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";
-import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
+import { ReduxWrapper } from "@/test_utils/MockWrappers";
 
 jest.mock("next/router", () => ({
   useRouter() {

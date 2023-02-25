@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
-import { ChakraWrapper } from "@/test_utils/ChakraWrapper";
+import { ChakraWrapper } from "@/test_utils/MockWrappers";
 import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/[slug]";
 import { GetStaticPropsContext } from "next";
@@ -26,7 +26,6 @@ describe("ProductGallery", () => {
     };
     const value: any = await getStaticProps(context as GetStaticPropsContext);
     const productGallery = value.props.product.gallery;
-    console.log(productGallery);
 
     render(
       <ChakraWrapper>

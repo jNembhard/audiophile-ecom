@@ -12,10 +12,15 @@ const CategoryPage = (props: Props) => {
   const {
     query: { category },
   } = useRouter();
+
+  const metaTitle = (heading: string) => {
+    return heading.charAt(0).toUpperCase() + heading.slice(1);
+  };
+
   return (
     <>
       <NextHead
-        title={`${category}`}
+        title={metaTitle(`${category}`)}
         description={`Check out Audiophile's latest ${category}.`}
         type="webapp"
       />

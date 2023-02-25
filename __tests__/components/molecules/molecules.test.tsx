@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";
-import { ChakraWrapper } from "@/test_utils/ChakraWrapper";
+import { ChakraWrapper } from "@/test_utils/MockWrappers";
 import ProductListItem from "@/components/molecules/ProductListItem";
 
 describe("ProductListItem", () => {

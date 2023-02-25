@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { cleanup, render, screen } from "@testing-library/react";
-import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
+import { render, screen } from "@testing-library/react";
+import { ChakraWrapper, ReduxWrapper } from "@/test_utils/MockWrappers";
 import HeroBanner from "@/components/organisms/HeroBanner";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
@@ -10,13 +10,10 @@ import ProductLinks from "@/components/organisms/ProductLinks";
 import { mockAllIsIntersecting } from "react-intersection-observer/test-utils";
 import MotionAudioGear from "@/components/organisms/MotionAudioGear";
 import HomeProductGallery from "@/components/organisms/HomeProductGallery";
-import { ChakraWrapper } from "@/test_utils/ChakraWrapper";
 import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";
 import ProductList from "@/components/organisms/ProductList";
-
-// afterEach(cleanup);
 
 describe("Hero Banner", () => {
   it("should render the Hero Banner", () => {
