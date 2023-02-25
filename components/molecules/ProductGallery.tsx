@@ -5,6 +5,7 @@ type Props = {
   first?: CategoryImage | undefined;
   second?: CategoryImage | undefined;
   third?: CategoryImage | undefined;
+  altText?: CategoryImage | undefined;
 };
 
 const ProductGallery = (props: Props) => {
@@ -24,7 +25,7 @@ const ProductGallery = (props: Props) => {
           width="100%"
           height="100%"
           borderRadius="0.5rem"
-          alt=""
+          alt={props.first?.altText}
         />
       </Box>
       <Box as="picture" gridArea={{ sm: "b" }}>
@@ -36,7 +37,7 @@ const ProductGallery = (props: Props) => {
           width="100%"
           height="100%"
           borderRadius="0.5rem"
-          alt=""
+          alt={props.second?.altText}
         />
       </Box>
       <Box as="picture" gridArea={{ sm: "c" }}>
@@ -48,7 +49,7 @@ const ProductGallery = (props: Props) => {
           width="100%"
           height="100%"
           borderRadius="0.5rem"
-          alt=""
+          alt={props.third?.altText}
         />
       </Box>
     </SimpleGrid>

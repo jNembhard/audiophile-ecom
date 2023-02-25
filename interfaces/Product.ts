@@ -21,6 +21,7 @@ export interface CategoryImage {
   mobile: string;
   tablet: string;
   desktop: string;
+  altText: string;
 }
 
 export interface Gallery {

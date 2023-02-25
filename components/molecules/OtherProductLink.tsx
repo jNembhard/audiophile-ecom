@@ -30,7 +30,7 @@ const OtherProductLink: React.FC<OtherProductProps> = ({
       </Heading>
       <NextLink href={`/${slug}`} passHref>
         <Link _hover={{ textDecoration: "none" }}>
-          <Button as="a" cursor="pointer" mt={{ base: "2rem" }}>
+          <Button cursor="pointer" mt={{ base: "2rem" }}>
             See Product
           </Button>
         </Link>

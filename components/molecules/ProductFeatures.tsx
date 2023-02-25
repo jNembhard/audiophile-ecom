@@ -22,8 +22,14 @@ const ProductFeatures = (props: Props) => {
       mt={{ base: "5.5rem", sm: "7.5rem", lg: "10rem" }}
     >
       <Box flexBasis={{ lg: "55%" }}>
-        <Heading fontSize={{ base: "1.5rem", md: "2rem" }}>Features</Heading>
-        <Text mt={{ base: "1.5rem" }} whiteSpace="pre-line">
+        <Heading id="features" fontSize={{ base: "1.5rem", md: "2rem" }}>
+          Features
+        </Heading>
+        <Text
+          aria-labelledby="features"
+          mt={{ base: "1.5rem" }}
+          whiteSpace="pre-line"
+        >
           {props.features}
         </Text>
       </Box>

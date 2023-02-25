@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductFeatures should render the ProductFeature Component with dynamic data: <span class="css-1vroocg">1x</span> 1`] = `
+<span
+  class="css-1vroocg"
+>
+  1
+  x
+</span>
+`;
+
+exports[`ProductFeatures should render the ProductFeature Component with dynamic data: <span class="css-1vroocg">1x</span> 2`] = `
+<span
+  class="css-1vroocg"
+>
+  2
+  x
+</span>
+`;
+
+exports[`ProductFeatures should render the ProductFeature Component with dynamic data: <span class="css-1vroocg">1x</span> 3`] = `
+<span
+  class="css-1vroocg"
+>
+  1
+  x
+</span>
+`;
+
+exports[`ProductFeatures should render the ProductFeature Component with dynamic data: <span class="css-1vroocg">1x</span> 4`] = `
+<span
+  class="css-1vroocg"
+>
+  1
+  x
+</span>
+`;

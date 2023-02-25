@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { ReduxWrapper } from "@/test_utils/ReduxWrapper";
 import HeroBanner from "@/components/organisms/HeroBanner";
 import Header from "@/components/organisms/Header";
@@ -15,6 +15,8 @@ import { mockNextUseRouter } from "@/test_utils/mock_router/mockrouter";
 import { getStaticProps } from "@/pages/[category]/index";
 import { GetStaticPropsContext } from "next";
 import ProductList from "@/components/organisms/ProductList";
+
+// afterEach(cleanup);
 
 describe("Hero Banner", () => {
   it("should render the Hero Banner", () => {

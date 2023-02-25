@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Stack, Box, Image } from "@chakra-ui/react";
 import { Product } from "@/interfaces/Product";
 import ProductDescription from "@/components/molecules/ProductDescription";
@@ -12,7 +13,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({
   product,
 }): JSX.Element => {
   return (
-    <>
+    <Fragment>
       <Stack
         direction={{ base: "column", sm: "row" }}
         align={{ sm: "center" }}
@@ -47,7 +48,7 @@ const ProductDetails: React.FC<{ product: Product }> = ({
       <ProductOthers other={product.others} />
       <ProductLinks />
       <MotionAudioGear />
-    </>
+    </Fragment>
   );
 };
 

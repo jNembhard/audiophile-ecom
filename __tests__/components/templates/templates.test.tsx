@@ -64,3 +64,7 @@ describe("CategoryTemplate", () => {
   `);
   });
 });
+
+describe("ProductTemplate", () => {
+  it("Should render the template component", () => {});
+});

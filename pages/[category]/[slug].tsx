@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const params = context.params as Params;
-  const product: Product | undefined = getProductBySlug(params.slug);
+  const product: Product | undefined = getProductBySlug(params?.slug);
 
   return { props: { product } };
 };
