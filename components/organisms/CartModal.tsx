@@ -5,7 +5,7 @@ import {
   clearCart,
   totalAmount,
   totalQuantity,
-} from "../../store/CartSlice";
+} from "@/store/CartSlice";
 import {
   useToast,
   Modal,

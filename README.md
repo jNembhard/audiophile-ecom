@@ -8,7 +8,7 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Project insights](#project-insights)
   - [Continued development](#continued-development)
 - [Author](#author)
 
@@ -53,7 +53,7 @@ Users should be able to:
 - Atomic Design Pattern
 - Mobie-first workflow
 
-### What I learned
+### Project insights
 
 I've wanted to work on completing a project using TypeScript for quite some time. Originally, I was working on this project with Styled Components and decided this would be a good time to learn how to use some new tools. This is where Chakra comes into play.
 

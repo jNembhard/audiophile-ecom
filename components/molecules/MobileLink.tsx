@@ -13,7 +13,10 @@ const MobileLink = (props: Props) => {
       textAlign="center"
       borderRadius="0.5rem"
       cursor="pointer"
-      _focusWithin={{ outline: "2px dashed red", outlineOffset: "4px" }}
+      _focusWithin={{
+        outline: "0.125rem dashed red",
+        outlineOffset: "0.25rem",
+      }}
       sx={{
         "&:hover p": { color: "rawSienna" },
         "a:focus": { outline: "none" },

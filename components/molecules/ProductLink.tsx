@@ -12,7 +12,10 @@ const ProductLink = (props: Props) => {
       flex="1"
       textAlign="center"
       borderRadius="0.5rem"
-      _focusWithin={{ outline: "2px dashed red", outlineOffset: "4px" }}
+      _focusWithin={{
+        outline: "0.125rem dashed red",
+        outlineOffset: "0.25rem",
+      }}
       sx={{
         "&:hover p": { color: "rawSienna", "a:foucs": { outline: "none" } },
       }}
