@@ -80,13 +80,15 @@ const ZX9Speaker = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </Text>
-            <NextLink href="/speakers/zx9-speaker" passHref>
-              <Link _hover={{ textDecoration: "none" }}>
-                <Button bg="black" _hover={{ bg: "#4C4C4C" }}>
-                  See Product
-                </Button>
-              </Link>
-            </NextLink>
+            <Link
+              as={NextLink}
+              href="/speakers/zx9-speaker"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button bg="black" _hover={{ bg: "#4C4C4C" }}>
+                See Product
+              </Button>
+            </Link>
           </Box>
         </Stack>
       </Box>

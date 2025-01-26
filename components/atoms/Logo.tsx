@@ -1,6 +1,6 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Link } from "@chakra-ui/react";
 import Image from "next/image";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { isMenuOpen, toggleNav } from "@/store/menuSlice";
 
@@ -16,15 +16,13 @@ const Logo = () => {
 
   return (
     <Box mr={{ sm: "auto", lg: 0 }} lineHeight="0">
-      <Link href="/">
-        <a onClick={menuClose}>
-          <Image
-            src="/assets/shared/desktop/logo.svg"
-            width={144}
-            height={25}
-            alt="Audiophile Logo"
-          />
-        </a>
+      <Link as={NextLink} href="/" onClick={menuClose}>
+        <Image
+          src="/assets/shared/desktop/logo.svg"
+          width={144}
+          height={25}
+          alt="Audiophile Logo"
+        />
       </Link>
     </Box>
   );

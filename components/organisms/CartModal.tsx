@@ -89,18 +89,20 @@ const CartModal = () => {
                   ${amount.toLocaleString("en-US")}
                 </Text>
               </HStack>
-              <NextLink href="/checkout" passHref>
-                <Link _hover={{ textDecoration: "none" }}>
-                  <Button
-                    as="a"
-                    onClick={onCartModalClose}
-                    cursor="pointer"
-                    width="100%"
-                  >
-                    Checkout
-                  </Button>
-                </Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                href="/checkout"
+                _hover={{ textDecoration: "none" }}
+              >
+                <Button
+                  as="a"
+                  onClick={onCartModalClose}
+                  cursor="pointer"
+                  width="100%"
+                >
+                  Checkout
+                </Button>
+              </Link>
             </Box>
           ) : (
             <Box

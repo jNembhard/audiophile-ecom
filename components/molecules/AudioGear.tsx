@@ -26,7 +26,6 @@ const AudioGear = () => {
           alt="A boy enjoying headphones from audiophile"
         />
       </Box>
-
       <Box flex="1" marginStart={{ lg: 0 }}>
         <Heading
           as="h2"

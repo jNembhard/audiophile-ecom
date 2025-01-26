@@ -184,13 +184,11 @@ const CheckoutModal = () => {
             </Text>
           </Flex>
         </Flex>
-        <NextLink href="/" passHref>
-          <Link _hover={{ textDecoration: "none" }}>
-            <Button as="a" onClick={handleClick} cursor="pointer">
-              Back to home
-            </Button>
-          </Link>
-        </NextLink>
+        <Link as={NextLink} href="/" _hover={{ textDecoration: "none" }}>
+          <Button as="a" onClick={handleClick} cursor="pointer">
+            Back to home
+          </Button>
+        </Link>
       </ModalContent>
     </Modal>
   );

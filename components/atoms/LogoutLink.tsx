@@ -53,30 +53,34 @@ const LogoutLink = (props: Props) => {
                 Logout
               </Box>
               &nbsp;&nbsp;&nbsp;
-              <NextLink href="/orders" passHref>
-                <Link _hover={{ textDecoration: "none" }}>
-                  <Box
-                    _hover={{ color: "rawSienna" }}
-                    transition="color 0.2s linear"
-                    onClick={menuClose}
-                  >
-                    orders
-                  </Box>
-                </Link>
-              </NextLink>
-            </Flex>
-          ) : (
-            <NextLink href="/login" passHref>
-              <Link _hover={{ textDecoration: "none" }}>
+              <Link
+                as={NextLink}
+                href="/orders"
+                _hover={{ textDecoration: "none" }}
+              >
                 <Box
                   _hover={{ color: "rawSienna" }}
                   transition="color 0.2s linear"
                   onClick={menuClose}
                 >
-                  Sign In
+                  orders
                 </Box>
               </Link>
-            </NextLink>
+            </Flex>
+          ) : (
+            <Link
+              as={NextLink}
+              href="/login"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Box
+                _hover={{ color: "rawSienna" }}
+                transition="color 0.2s linear"
+                onClick={menuClose}
+              >
+                Sign In
+              </Box>
+            </Link>
           )}
         </Box>
       </Stack>

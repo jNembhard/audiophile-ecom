@@ -20,9 +20,13 @@ const FooterLinks = () => {
           transition="color 0.2s linear"
           _hover={{ color: "rawSienna" }}
         >
-          <NextLink href={navlink.url} passHref>
-            <Link _hover={{ textDecoration: "none" }}>{navlink.text}</Link>
-          </NextLink>
+          <Link
+            as={NextLink}
+            href={navlink.url}
+            _hover={{ textDecoration: "none" }}
+          >
+            {navlink.text}
+          </Link>
         </Box>
       ))}
     </Stack>
