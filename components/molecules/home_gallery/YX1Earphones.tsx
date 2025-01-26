@@ -52,11 +52,14 @@ const YX1Earphones = () => {
             <Heading as="h2" fontSize="1.75rem" color="black" mb="2rem">
               YX1 Earphones
             </Heading>
-            <NextLink href="/earphones/yx1-earphones" passHref>
-              <Link _hover={{ textDecoration: "none" }}>
-                <Button variant="secondary">See Product</Button>
-              </Link>
-            </NextLink>
+
+            <Link
+              as={NextLink}
+              href="/earphones/yx1-earphones"
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button variant="secondary">See Product</Button>
+            </Link>
           </Box>
         </Box>
       </Motion>

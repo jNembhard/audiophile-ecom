@@ -22,7 +22,7 @@ const NavLinks = () => {
             color={asPath === navlink.url ? "rawSienna" : "white"}
           >
             <NavLink href={navlink.url} active={asPath === navlink.url}>
-              <a>{navlink.text}</a>
+              <>{navlink.text}</>
             </NavLink>
           </Box>
         ))}
@@ -39,13 +39,11 @@ const NavLink: React.FC<{
   const child = React.Children.only(children);
 
   return (
-    <NextLink href={href} passHref>
-      <Link _hover={{ textDecoration: "none" }}>
-        {React.cloneElement(child as React.ReactElement, {
-          "aria-current": active ? "page" : null,
-        })}
-      </Link>
-    </NextLink>
+    <Link as={NextLink} href={href} _hover={{ textDecoration: "none" }}>
+      {React.cloneElement(child as React.ReactElement, {
+        "aria-current": active ? "page" : null,
+      })}
+    </Link>
   );
 };
 

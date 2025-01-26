@@ -141,13 +141,11 @@ const Login = () => {
       </Stack>
       <Flex>
         New to Audiophile?{" "}
-        <NextLink href="/signup" passHref>
-          <Link _hover={{ textDecoration: "none" }}>
-            <Box cursor="pointer" color="rawSienna" paddingLeft="0.1875rem">
-              Sign Up
-            </Box>
-          </Link>
-        </NextLink>
+        <Link as={NextLink} href="/signup" _hover={{ textDecoration: "none" }}>
+          <Box cursor="pointer" color="rawSienna" paddingLeft="0.1875rem">
+            Sign Up
+          </Box>
+        </Link>
       </Flex>
     </Flex>
   );

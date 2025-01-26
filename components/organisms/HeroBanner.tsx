@@ -51,7 +51,7 @@ const HeroBanner = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: "0.5", duration: "1" },
+            transition: { delay: 0.5, duration: 1 },
           }}
         >
           <Box
@@ -74,25 +74,27 @@ const HeroBanner = () => {
           mx={{ base: "auto", lg: 0 }}
           mb={10}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: "1", duration: "1" } }}
+          animate={{ opacity: 1, transition: { delay: 1, duration: "1" } }}
         >
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </MotionText>
-        <NextLink href="/headphones/xx99-mark-two-headphones" passHref>
-          <Link _hover={{ textDecoration: "none" }}>
-            <MotionButton
-              cursor="pointer"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: { delay: "1.5", duration: "1" },
-              }}
-            >
-              See Product
-            </MotionButton>
-          </Link>
-        </NextLink>
+        <Link
+          as={NextLink}
+          href="/headphones/xx99-mark-two-headphones"
+          _hover={{ textDecoration: "none" }}
+        >
+          <MotionButton
+            cursor="pointer"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 1.5, duration: 1 },
+            }}
+          >
+            See Product
+          </MotionButton>
+        </Link>
       </Container>
     </Box>
   );

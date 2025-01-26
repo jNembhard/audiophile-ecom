@@ -31,11 +31,13 @@ const ZX7Speaker = () => {
           <Heading color="black" fontSize="1.75rem" mb="2rem">
             ZX7 Speaker
           </Heading>
-          <NextLink href="/speakers/zx7-speaker" passHref>
-            <Link _hover={{ textDecoration: "none" }}>
-              <Button variant="secondary">See Product</Button>
-            </Link>
-          </NextLink>
+          <Link
+            as={NextLink}
+            href="/speakers/zx7-speaker"
+            _hover={{ textDecoration: "none" }}
+          >
+            <Button variant="secondary">See Product</Button>
+          </Link>
         </Box>
       </Box>
     </Motion>
