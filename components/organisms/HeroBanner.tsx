@@ -51,7 +51,7 @@ const HeroBanner = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: "0.5", duration: "1" },
+            transition: { delay: 0.5, duration: 1 },
           }}
         >
           <Box
@@ -74,7 +74,7 @@ const HeroBanner = () => {
           mx={{ base: "auto", lg: 0 }}
           mb={10}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { delay: "1", duration: "1" } }}
+          animate={{ opacity: 1, transition: { delay: 1, duration: "1" } }}
         >
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
@@ -89,7 +89,7 @@ const HeroBanner = () => {
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { delay: "1.5", duration: "1" },
+              transition: { delay: 1.5, duration: 1 },
             }}
           >
             See Product
